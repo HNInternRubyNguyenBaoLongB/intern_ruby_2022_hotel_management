@@ -13,3 +13,6 @@ user:
     size: 80
   per_page: 10
   expiration_password: 2
+home:
+  preview_page_link: "https://startbootstrap.com/theme/grayscale/"
+  contact_form_link: "https://startbootstrap.com/solution/contact-forms"
