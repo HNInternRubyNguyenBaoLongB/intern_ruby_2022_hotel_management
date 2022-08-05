@@ -1,10 +1,15 @@
 en:
   layouts:
+    application:
+      title: Dracul Hotel
     header:
       hotel_name: "Demo Hotel"
       register: "Register"
       view: "See room"
       login: "Log in"
+      log_out: "Log out"
+      profile: "Profile"
+      settings: "Settings"
     footer:
       address: "Address"
       address_content: "Le Quang Dao Nam Tu Liem Ha Noi"
@@ -31,3 +36,22 @@ en:
       require_email: "Require true email"
       valid_email: "Require valid email"
       successful_form: "Successful send form"
+  sessions:
+    new:
+      login: "Login"
+      submit: "Submit"
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me"
+      sign_up: "Sign Up!"
+      forgot_password: "Forgot Password!"
+      register: "Register!"
+      new_user: "New User? "
+      enter_email: "Enter your email here"
+      enter_password: "Enter your password here"
+    create:
+      controller:
+        find_error: "Login error!"
+      create:
+        find_error: "Invalid mail!"
+        alert: "Wrong password!"

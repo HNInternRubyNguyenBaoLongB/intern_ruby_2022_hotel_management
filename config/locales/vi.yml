@@ -1,10 +1,15 @@
 vi:
   layouts:
+    application:
+      title: Dracul Hotel
     header:
       hotel_name: "Demo Hotel"
       register: "Đăng ký"
       view: "Xem phòng"
       login: "Đăng nhập"
+      log_out: "Đăng xuất"
+      profile: "Thông tin"
+      settings: "Cài đặt"
     footer:
       address: "Địa chỉ"
       address_content: "Lê Quang Đạo Nam Từ Liêm Hà Nội"
@@ -31,3 +36,22 @@ vi:
       require_email: "Cần điền đúng email"
       valid_email: "Cần điền email hợp lệ"
       successful_form: "Gửi form thành công"
+  sessions:
+    new:
+      login: "Đăng Nhập"
+      submit: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      remember_me: "Duy trì đăng nhập"
+      sign_up: "Đăng ký!"
+      forgot_password: "Quên mật khẩu!"
+      register: "Đăng ký!"
+      new_user: "Người dùng mới? "
+      enter_email: "Nhập email của bạn"
+      enter_password: "Nhập mật khẩu của bạn"
+    create:
+      controller:
+        find_error: "Lỗi đăng nhập!"
+      create:
+        find_error: "Sai Mail!"
+        alert: "Sai mật khẩu!"
