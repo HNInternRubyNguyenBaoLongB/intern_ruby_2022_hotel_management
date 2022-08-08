@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :phone
       t.integer :role
       t.datetime :deleted_at
-
+      
       t.timestamps
     end
   end

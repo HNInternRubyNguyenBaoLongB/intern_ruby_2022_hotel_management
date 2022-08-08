@@ -1,0 +1,30 @@
+<%= provide :title, t(".login") %>
+<section class="signup-section" id="signup">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5">
+      <div class="col-md-10 col-lg-8 mx-auto text-center">
+        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+        <h2 class="text-white mb-5"><%= t ".login" %></h2>
+          <div class="row input-group-newsletter">
+            <%= form_for :session, :html => {:class => "form-signup"}, url: login_path do |f| %>
+              <div class="row">
+                <%= f.email_field :email, class: "form-control", placeholder: t(".enter_email") %>
+              </div>
+              <div class="row">
+                <%= f.password_field :password, class: "form-control", placeholder: t(".enter_password") %>
+              </div>
+              <div class="row">
+                <%= f.label :remember_me, class: "checkbox inline text-white mb-4 align-left col-md-8" do %>
+                  <%= f.check_box :remember_me %>
+                  <span> <%= t ".remember_me" %> </span>
+                <% end %>
+                <%= link_to t(".forgot_password"), "#", class: "inline text-white mb-4 align-right col-md-4" %>
+              </div>
+              <%= f.submit t(".submit"), class: "btn btn-primary" %>
+            <% end %>
+            <p class="align-left" ><%= t ".new_user" %><%= link_to t(".register"), "#" %></p>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -5,7 +5,9 @@
         <div class="text-center">
           <h1 class="mx-auto my-0 text-uppercase"><%= t ".hotel_name" %></h1>
           <h2 class="text-white-50 mx-auto mt-2 mb-5"><%= t ".hotel_slogan" %></h2>
-          <%= link_to t(".started"), "#about", class: "btn btn-primary" %>
+          <% unless logged_in? %>
+            <%= link_to t(".started"), login_path, class: "btn btn-primary" %>
+          <% end %>
         </div>
       </div>
     </div>
