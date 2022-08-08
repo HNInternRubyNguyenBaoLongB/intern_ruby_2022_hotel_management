@@ -1,20 +1,20 @@
-en:
+vi:
   layouts:
     header:
       hotel_name: "Demo Hotel"
-      register: "Register"
-      view: "See room"
-      login: "Log in"
+      register: "Đăng ký"
+      view: "Xem phòng"
+      login: "Đăng nhập"
     footer:
-      address: "Address"
-      address_content: "Le Quang Dao Nam Tu Liem Ha Noi"
+      address: "Địa chỉ"
+      address_content: "Lê Quang Đạo Nam Từ Liêm Hà Nội"
       email: "Email"
       email_content: "sun-asterisk.com"
       phone: "Hotline"
       phone_content: "0984738475"
   pages:
     home:
-      started: "Log In"
+      started: "Đăng Nhập"
       hotel_name: "Demo Hotel"
       hotel_slogan: "Now or never"
       hotel_description_first: "Hotel for everyone "
@@ -26,8 +26,8 @@ en:
       second_description_content: "River surrounding hotel"
       third_description: "Mountain"
       third_description_content: "Mountain very big"
-      hotel_subcribe: "Subcribe"
-      hotel_notify: "Notify"
-      require_email: "Require true email"
-      valid_email: "Require valid email"
-      successful_form: "Successful send form"
+      hotel_subcribe: "Theo dõi"
+      hotel_notify: "Thông báo"
+      require_email: "Cần điền đúng email"
+      valid_email: "Cần điền email hợp lệ"
+      successful_form: "Gửi form thành công"
