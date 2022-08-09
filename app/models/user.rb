@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  UPDATABLE_ATTRS = %i(name email password password_confirmation).freeze
+
   has_many :reviews, dependent: :destroy
   has_many :bills, dependent: :destroy
   has_many :bookings, dependent: :destroy

@@ -93,3 +93,21 @@ vi:
       password: Mật khẩu
       forget_password: Quên mật khẩu ?
       remember_me: Ghi nhớ đăng nhập
+  users:
+    update:
+      old_password_fail: "Sai mật khẩu cũ"
+    form:
+      save_button: "Lưu"
+      name: "Tên người dùng"
+      email: "Email"
+      old_password: "Mật khẩu cũ"
+      password: "Mật khẩu mới"
+      confirm_password: "Nhập lại mật khẩu"
+      edit: "Chỉnh sửa"
+      enter_name: "Điền vào tên"
+      enter_email: "Điền vào email"
+      enter_old_password: "Nhập mật khẩu cũ"
+      enter_new_password: "Nhập mật khẩu mới"
+      enter_confirm_password: "Xác nhận mật khẩu"
+    edit:
+      heading: "Chỉnh sửa người dùng"
