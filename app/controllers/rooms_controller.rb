@@ -3,10 +3,10 @@ class RoomsController < ApplicationController
   before_action :check_blank_date, :check_date, only: :index
 
   def index
-    @pagy, @rooms = pagy Room.not_ids(
-      Room.by_between_date(params[:start_date],
-                           params[:end_date])
-    )
+    @room_ids = Room.new.room_ids(params[:start_date],
+                                  params[:end_date],
+                                  current_user.id)
+    @pagy, @rooms = pagy Room.not_ids(@room_ids)
                              .by_description(params[:description]),
                          items: Settings.room.room_per_page
   end

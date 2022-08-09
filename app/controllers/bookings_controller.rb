@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :check_date, :check_exist_booking, :find_room, :find_bill,
-                :fill_params, only: :create
+                :check_quantity_basket, :fill_params, only: :create
   before_action :find_booking, only: :destroy
 
   def create
@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
   end
 
   def find_bill
-    @bill ||= Bill.find_by user_id: current_user.id
+    @bill = Bill.pending.find_bill(current_user.id).first
     return if @bill
 
     @bill = current_user.bills.build
@@ -69,14 +69,18 @@ class BookingsController < ApplicationController
   end
 
   def check_exist_booking
+    @room_ids = find_room_ids_from_bookings
     return if Booking.find_room_with_id(params[:booking][:room_id])
-                     .check_exist_booking(
-                       params[:booking][:start_date],
-                       params[:booking][:end_date]
-                     ).blank?
+                     .check_exist_booking_with_room_ids(@room_ids).blank?
 
     flash[:danger] = t ".room_was_booking"
     redirect_to rooms_path
+  end
+
+  def find_room_ids_from_bookings
+    Booking.new.booking_ids(params[:booking][:start_date],
+                            params[:booking][:end_date],
+                            current_user.id)
   end
 
   def init_date
@@ -91,5 +95,12 @@ class BookingsController < ApplicationController
     @booking = current_user.bookings.build booking_params
     @booking.total_price = @booking.calculate_total_price(@booking, @room)
     @booking.bill_id = @bill.id
+  end
+
+  def check_quantity_basket
+    return if @bill.bookings.count < Settings.basket.max_basket
+
+    flash[:danger] = t ".basket_full"
+    redirect_to rooms_path
   end
 end

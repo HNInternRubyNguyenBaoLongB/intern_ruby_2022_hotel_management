@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_15_012034) do
+ActiveRecord::Schema.define(version: 2022_08_16_030234) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_012034) do
     t.bigint "discount_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
     t.index ["discount_id"], name: "index_bills_on_discount_id"
     t.index ["user_id", "discount_id", "created_at"], name: "index_bills_on_user_id_and_discount_id_and_created_at"
     t.index ["user_id"], name: "index_bills_on_user_id"

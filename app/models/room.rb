@@ -17,16 +17,27 @@ class Room < ApplicationRecord
           end
         end)
   scope :by_between_date,
-        (lambda do |start_date, end_date|
+        (lambda do |start_date, end_date, user_id|
           left_joins(:bookings)
           .select("room_id")
           .where("bookings.end_date > :start_date
-                  AND bookings.start_date < :end_date",
-                 start_date: start_date, end_date: end_date)
+                  AND bookings.start_date < :end_date
+                  AND bookings.user_id = :user_id",
+                 start_date: start_date, end_date: end_date, user_id: user_id)
         end)
+
   scope :not_ids, ->(ids){where.not(id: ids)}
   scope :by_types, ->(types){where(types: types) if types.present?}
 
+  def room_ids start_date, end_date, user_id
+    @room_ids_checking = Booking.checking.check_exist_booking(
+      start_date, end_date
+    ).pluck("room_id")
+    @room_ids_pending = Room.by_between_date(start_date,
+                                             end_date,
+                                             user_id).pluck("room_id")
+    @room_ids_checking + @room_ids_pending
+  end
   enum types: {
     Single: 0,
     Double: 1,

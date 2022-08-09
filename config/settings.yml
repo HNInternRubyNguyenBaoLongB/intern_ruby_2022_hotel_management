@@ -25,3 +25,5 @@ booking:
   booking_per_page: 5
 day:
   day_from_now: 1
+basket:
+  max_basket: 3
