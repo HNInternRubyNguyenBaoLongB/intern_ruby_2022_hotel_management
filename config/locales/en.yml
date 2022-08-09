@@ -2,6 +2,7 @@ en:
   layouts:
     application:
       title: Dracul Hotel
+      base_title: Hotel Management
     header:
       hotel_name: "Demo Hotel"
       register: "Register"
@@ -55,3 +56,40 @@ en:
       create:
         find_error: "Invalid mail!"
         alert: "Wrong password!"
+  base:
+    footer:
+      copyright: Copyright
+      name: Hotel Management
+      privacy: Privacy Policy
+      term: Terms
+      condition: Conditions
+    header:
+      setting: Setting
+      logout: Logout
+      admin: Admin
+    sidebar:
+      room: Rooms
+      room_management: Manage Room
+      bill: Bills
+      bill_management: Manage bills
+      bill_stat: Bills Statics
+      bill_confirm: Confrim bills
+      users: Users
+      user_management: Manage users
+      login_as: Login as
+  admin:
+    index:
+      dashboard: Dashboard
+      total_rooms: Total Rooms
+      view: View details
+      total_users: Total Users
+      total_bills: Total Bills
+      total_bills_pending: Total Bills Pending
+      month_stat: Total revenue
+      room_stat: Room revenue
+      latest_trans: Most recent transaction
+    login:
+      log_in: Login
+      password: Password
+      forget_password: Forget Password ?
+      remember_me: Remember me
