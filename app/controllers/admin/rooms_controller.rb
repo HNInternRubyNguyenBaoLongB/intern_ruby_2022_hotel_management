@@ -1,5 +1,7 @@
 class Admin::RoomsController < Admin::AdminController
-  def index; end
+  def index
+    @pagy, @rooms = pagy Room.recent_rooms, items: Settings.room.room_per_page
+  end
 
   def new
     @room = Room.new

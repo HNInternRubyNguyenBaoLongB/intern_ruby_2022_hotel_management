@@ -3,7 +3,7 @@
 <div class="swiffy-slider slider-item-helper slider-nav-caret">
   <ul class="slider-container">
     <% @room.images.each do |image| %>
-      <li><%= image_tag image, class: "img-fluid" %></li>
+      <li><%= image_tag image.photo_url, class: "img-fluid" %></li>
     <% end %>
   </ul>
 

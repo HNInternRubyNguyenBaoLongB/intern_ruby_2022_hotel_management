@@ -13,6 +13,8 @@ require('./iconify.min')
 require('./scripts')
 require ('cocoon')
 require('jquery')
+import "bootstrap"
+import Chart from 'chart.js/auto'
 
 Rails.start()
 Turbolinks.start()

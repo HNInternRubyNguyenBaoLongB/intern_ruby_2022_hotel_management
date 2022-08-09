@@ -76,9 +76,6 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -388,7 +385,6 @@ DEPENDENCIES
   bcrypt
   bootsnap (>= 1.4.4)
   bootstrap (~> 4.1.3)
-  bootstrap-sass (~> 3.4.1)
   capybara (>= 3.26)
   carrierwave
   cocoon

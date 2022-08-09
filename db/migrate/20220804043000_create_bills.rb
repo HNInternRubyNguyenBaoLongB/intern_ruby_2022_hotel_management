@@ -3,7 +3,7 @@ class CreateBills < ActiveRecord::Migration[6.1]
     create_table :bills do |t|
       t.decimal :total_price
       t.references :user, null: false, foreign_key: true
-      t.references :discount, null: false, foreign_key: true
+      t.references :discount, null: true, foreign_key: false
 
       t.timestamps
     end

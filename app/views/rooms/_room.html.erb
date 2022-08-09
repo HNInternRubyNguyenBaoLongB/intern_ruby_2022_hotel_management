@@ -2,11 +2,7 @@
   <div class="container px-4 px-lg-5">
     <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
       <div class="col-lg-4">
-        <% room.images.each_with_index do |image, index| %>
-          <% if index == 0 %>
-            <%= image_tag image, class: "img-fluid"%>
-          <% end %>
-        <% end %>
+        <%= image_tag room.images.first.photo_url, class: "img-fluid"%>
       </div>
       <div class="col-lg-5">
         <div class="bg-white h-100 project">
@@ -23,12 +19,15 @@
         <div class="bg-white h-100 project">
           <div class="d-flex h-100">
             <div class="project-text w-100 text-lg-left">
-              <h4 class="text-white"><%= link_to room.name, room %></h4>
-              <p class="star"><span> <%= sanitize render_star(room.rate_avg), attributes: %w(class data-icon) %> </span></p>
-              <span class="city"><%= room.description %></span>
+              <%= form_for room.bookings.build, html: {class: "form-signup"} do |f| %>
+                <%= f.hidden_field :room_id, value: room.id %>
+                <%= f.hidden_field :start_date, value: params[:start_date].blank? ? DateTime.now.to_date : params[:start_date] %>
+                <%= f.hidden_field :end_date, value: params[:end_date].blank? ? Settings.day.day_from_now.days.from_now.to_date : params[:end_date] %>
+                <div class="col"><button class="btn btn-primary margin-button" id="submitButton" type="submit"><%= t ".add_basket_button" %></button></div>
+              <% end %>
             </div>
           </div>
         </div>
-    </div>
+      </div>
   </div>
 </section>
