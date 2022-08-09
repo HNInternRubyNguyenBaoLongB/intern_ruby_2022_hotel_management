@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :logged_in_user, :check_date, :check_exist_booking, :find_room,
+  before_action :logged_in_user, :check_date, :find_room, :check_exist_booking,
                 :find_bill, :check_quantity_basket, :fill_params, only: :create
   before_action :logged_in_user, :find_booking,
                 :check_status_booking, only: :destroy
@@ -91,8 +91,8 @@ class BookingsController < ApplicationController
 
   def check_exist_booking
     @room_ids = find_room_ids_from_bookings
-    return if Booking.find_room_with_id(params[:booking][:room_id])
-                     .check_exist_booking_with_room_ids(@room_ids).blank?
+    return if Booking.find_room_with_id(@room.id)
+                     .find_room_with_id(@room_ids).blank?
 
     flash[:danger] = t ".room_was_booking"
     redirect_to rooms_path
@@ -126,7 +126,7 @@ class BookingsController < ApplicationController
   end
 
   def check_status_booking
-    return if @booking.checking? || @booking.status.pending?
+    return if @booking.checking? || @booking.pending?
 
     flash[:danger] = t ".booking_was_checked"
     redirect_to history_path

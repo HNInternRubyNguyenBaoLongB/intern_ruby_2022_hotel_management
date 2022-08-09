@@ -16,7 +16,11 @@ class RoomsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @review = Review.new
+    @photo = @review.photos.build
+    @list_review = @room.reviews.create_desc
+  end
 
   private
 
@@ -31,14 +35,10 @@ class RoomsController < ApplicationController
   end
 
   def filter_if_guest
-    @pagy, @rooms = pagy Room.not_ids(
-      Room.by_between_date_for_guest(
-        params[:start_date],
-        params[:end_date]
-      )
-    ).by_description(params[:description]),
+    @pagy, @rooms = pagy Room.room_order
+                             .by_description(params[:description]),
                          items: Settings.room.room_per_page,
-                         link_extra: 'data-remote="true"'
+                          link_extra: 'data-remote="true"'
   end
 
   def find_rooms

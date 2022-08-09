@@ -13097,3 +13097,48 @@ body {
   padding-top: 4rem !important;
   padding-bottom: 1rem !important;
 }
+
+.rating, .rated {
+  .fa-star {
+    font-size: 16px;
+    &:hover, &.active {
+      color: orange;
+      cursor: pointer;
+    }
+  }
+}
+.content-form{
+  margin-bottom: 10px;
+}
+.wrap-comment {
+  span.user {
+    font-size: 18px;
+    color: blue;
+  }
+  .image-comment {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+
+.height_custom {
+  height: 12.35rem !important;
+}
+
+.width_settup_review{
+  width: 15%;
+}
+
+.change_witdh_heigh {
+  height: 300px !important;
+  width: 40% !important;
+}
+
+.margin_tinymce {
+  margin-left: 50px;
+}
+
+.margin_left_button {
+  margin-left: 40rem;
+}

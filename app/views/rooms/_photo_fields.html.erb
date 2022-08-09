@@ -1,0 +1,12 @@
+<div class="card nested-fields">
+  <div class="form-group">
+    <div class="card-header">
+      <%= t ".photo" %>
+    </div>
+    <div class="card-body">
+      <%= f.file_field :image, class: "upload-image margin_left_button"%><br>
+      <div class="preview"></div>
+      <%= link_to_remove_association (t ".remove"), f, class: "btn btn-danger btn-sm margin_left_button" %>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,9 @@
 <tr>
   <td><%= histories.user_name %>
-  <td><%= histories.total_price %>
+  <td><%= number_to_currency(change_money(histories.total_price)) %>
   <td><%= histories.bookings.count %>
   <td>
-    <span class='<%= check_status(histories.status) %>'><%= histories.status %> </span>
+    <span class='<%= check_status_history(histories.status) %>'><%= histories.status %> </span>
   </td>
   <td>
     <%= link_to bookings_path(bill_id: histories.id) do %>

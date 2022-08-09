@@ -25,14 +25,6 @@ class Room < ApplicationRecord
                   AND bookings.user_id = :user_id",
                  start_date: start_date, end_date: end_date, user_id: user_id)
         end)
-  scope :by_between_date_for_guest,
-        (lambda do |start_date, end_date|
-          left_joins(:bookings)
-          .select("room_id")
-          .where("bookings.end_date > :start_date
-                  AND bookings.start_date < :end_date",
-                 start_date: start_date, end_date: end_date)
-        end)
 
   scope :not_ids, ->(ids){where.not(id: ids)}
   scope :by_types, ->(types){where(types: types) if types.present?}

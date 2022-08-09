@@ -1,12 +1,11 @@
 vi:
-  photo:
   layouts:
     admin:
       base_title: Quản lý khách sạn
     application:
       title: Dracul Hotel
     header:
-      hotel_name: "Demo Hotel"
+      hotel_name: "Dracul Hotel"
       register: "Đăng ký"
       view: "Xem phòng"
       login: "Đăng nhập"
@@ -23,17 +22,17 @@ vi:
   pages:
     home:
       started: "Đăng Nhập"
-      hotel_name: "Demo Hotel"
-      hotel_slogan: "Now or never"
-      hotel_description_first: "Hotel for everyone "
-      hotel_register: "Register"
-      hotel_description_second: " now to make difference"
-      first_description: "Fog"
-      first_description_content: "Fog in here very large"
-      second_description: "River"
-      second_description_content: "River surrounding hotel"
-      third_description: "Mountain"
-      third_description_content: "Mountain very big"
+      hotel_name: "Dracul Hotel"
+      hotel_slogan: "Book or Die   "
+      hotel_description_first: "Khách sạn đặc biệt cho bạn ngay hôm nay "
+      hotel_register: "Đặt phòng ngay"
+      hotel_description_second: " để có thể trải nghiệm sự khác biệt của chúng tôi"
+      first_description: "Sương mù"
+      first_description_content: "Sương mù ở đây rất dày đặc, đảm bảo trải nghiệm của bạn rùng rợn khó quên"
+      second_description: "Rừng núi"
+      second_description_content: "Rừng núi ở nơi đây vô cùng nhiều và hiểm trở để các bạn có thể thoải mái leo, nhưng cẩn thận leo không về được!!!"
+      third_description: "Sự kết hợp hoàn hảo"
+      third_description_content: "Những thứ trên tạo ra sự hoàn hảo để trải nghiệm. Còn gì mà không book phòng bây giờ"
       hotel_subcribe: "Theo dõi"
       hotel_notify: "Thông báo"
       require_email: "Cần điền đúng email"
@@ -80,6 +79,76 @@ vi:
       users: Khách hàng
       user_management: Quản lý khách hàng
       login_as: "Đăng nhập bởi "
+  rooms:
+    index:
+      enter_description: "Điền vào mô tả"
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      search_button: "Tìm kiếm"
+      date_danger: "Vui lòng chọn thời gian bắt đầu -> kết thúc ít nhất 1 ngày"
+    room:
+      add_basket_button: "Thêm vào giỏ"
+    form_review:
+      rating: "Đánh giá"
+      comment: "Để lại bình luận của bạn ở đây nha!"
+      add_a_photo: "Thêm ảnh"
+      submit: "Đánh giá"
+    photo_fields:
+      photo: "Ảnh đánh giá"
+  baskets:
+    show:
+      basket: "Giỏ hàng"
+      promotion: "Mã giảm giá"
+      apply: "Nhập"
+      item: "Phòng"
+      price: "Đơn giá"
+      subtotal: "Tổng giá tiền"
+      item_in_bag: "Sản phẩm trong giỏ hàng"
+      promotion_price: "Mã giảm giá"
+      total_price: "Tổng tiền bill"
+      payment: "Thanh toán"
+    basket:
+      confirm_dialog: "Bạn chắc chắn chưa?"
+  payment:
+    create:
+      success_payment: "Thanh toán thành công"
+      error_payment: "Trâu chậm uống nước đục!!!"
+  histories:
+    show:
+      history: "Lịch sử đặt phòng"
+      name: "Bill"
+      price: "Giá Bill"
+      quantity: "Số lượng"
+      status: "Trạng thái"
+      action: "Hành động"
+  bookings:
+    booking:
+      confirm_dialog: "Bạn chắc chắn chưa?"
+    destroy:
+      booking_was_checked: "Bạn ơi phòng đã được admin đồng ý mất rồi!"
+      booking_delete_success: "Xóa phòng đặt thành công"
+    index:
+      history: "Lịch sử phòng đã đặt"
+      name: "Phòng"
+      price: "Giá tiền"
+      date: "Ngày đặt"
+      status: "Trạng thái"
+      action: "Hành động"
+    create:
+      room_request_success: "Đặt phòng thành công"
+      room_request_denied: "Đặt phòng thất bại"
+      room_was_booking: "Phòng đã được đặt"
+  reviews:
+    create:
+      quantity_review: "Bạn đã đạt số lượng review nhất định, vui lòng đặt thêm để review thêm"
+      danger_star_review: "Sao phải từ 1 -> 5"
+      review_success: "Đánh giá thành công"
+      review_fail: "Đánh giá thất bại"
+#ADMIN-------------ADMIN
+#ADMIN-------------ADMIN
+#ADMIN-------------ADMIN
+#ADMIN-------------ADMIN
+#ADMIN-------------ADMIN
   admin:
     dashboard:
       index:
@@ -167,9 +236,15 @@ vi:
         room: Phòng
         status: Trạng thái
         bookings: Danh sách phòng đặt
+      create:
+        room_was_booking: "Phòng đã được đặt vào ngày giờ này"
   users:
     update:
       old_password_fail: "Sai mật khẩu cũ"
+      update_message: "Cập nhật thành công"
+      update_fail: "Cập nhật thất bại"
+      alert_correct_user: "Không đúng user này"
+      alert_user: "Không tìm thấy user"
     form:
       save_button: "Lưu"
       name: "Tên người dùng"

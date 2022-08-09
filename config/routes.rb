@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reviews/new'
+  get 'reviews/create'
+  get 'histories/show'
   scope "(:locale)", locale: /en|vi/ do
     root "pages#home"
     get "/login", to: "sessions#new"
@@ -18,5 +21,6 @@ Rails.application.routes.draw do
     resources :rooms
     resources :bookings
     resources :baskets
+    resources :reviews, only: %i(new create)
   end
 end

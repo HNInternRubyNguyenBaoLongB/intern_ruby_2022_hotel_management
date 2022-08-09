@@ -1,5 +1,5 @@
 module HistoriesHelper
-  def check_status status
+  def check_status_history status
     {
       "pending": "chip info",
       "checking": "chip warning",
