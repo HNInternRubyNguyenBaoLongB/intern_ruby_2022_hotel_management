@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2022_08_16_030234) do
     t.decimal "total_price", precision: 10
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "status"
+    t.integer "status", default: 0
     t.string "reason"
     t.bigint "user_id", null: false
     t.bigint "room_id", null: false
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2022_08_16_030234) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_reviews_on_room_id"
+    t.index ["user_id", "room_id", "created_at"], name: "index_reviews_on_user_id_and_room_id_and_created_at"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -105,7 +106,7 @@ ActiveRecord::Schema.define(version: 2022_08_16_030234) do
     t.decimal "rate_avg", precision: 10
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "type"
+    t.integer "types"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

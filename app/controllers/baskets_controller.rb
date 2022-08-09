@@ -13,7 +13,7 @@ class BasketsController < ApplicationController
   end
 
   def find_bill
-    @bill = Bill.pending.find_bill(current_user.id).first
+    @bill = Bill.pending.by_current_user(current_user.id).first
     return if @bill
 
     @bill = current_user.bills.build

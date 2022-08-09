@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Nunito&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 
 :root {
   --bs-blue: #0d6efd;
@@ -12826,4 +12828,272 @@ body {
 
 .label_align {
   text-align: left !important;
+}
+
+table#miyazaki {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: Agenda-Light, sans-serif;
+  font-weight: 100;
+  background: #333; color: #fff;
+  text-rendering: optimizeLegibility;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+table#miyazaki thead th { font-weight: 600; }
+table#miyazaki thead th, table#miyazaki tbody td {
+  padding: .8rem; font-size: 1.4rem;
+}
+table#miyazaki tbody td {
+  padding: .8rem; font-size: 1.4rem;
+  color: #444; background: #eee;
+  width: 10rem;
+}
+table#miyazaki tbody tr:not(:last-child) {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 600px) {
+  table#miyazaki caption { background-image: none; }
+  table#miyazaki thead { display: none; }
+  table#miyazaki tbody td {
+    display: block; padding: .6rem;
+  }
+  table#miyazaki tbody tr td:first-child {
+    background: #666; color: #fff;
+  }
+	table#miyazaki tbody td:before {
+    content: attr(data-th);
+    font-weight: bold;
+    display: inline-block;
+    width: 6rem;
+  }
+}
+
+body{
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+
+  background: #d9e0ea;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+h3{
+  text-align: center;
+  margin: 2rem auto;
+  color: #2F4058;
+  font-family: Nunito;
+}
+.row{
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chip{
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  margin: 0 10px;
+
+  cursor: pointer;
+  }
+
+.chip.primary{
+  background: #2F4058;
+  color: whitesmoke;
+}
+
+.chip.secondary{
+  background: #242933;
+  color: #777;
+}
+
+.chip.warning{
+  background:#FEB904;
+  color: whitesmoke;
+}
+.chip.danger{
+  background: #DA605B;
+  color: whitesmoke;
+}
+
+.chip.info{
+  background: #5FD6D4;
+  color: whitesmoke;
+}
+
+.chip-avatar{
+  border-radius: 30px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.chip-avatar img{
+  height: 25px;
+  width: 25px;
+  border-radius: 50px;
+}
+
+.chip-avatar label{
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.margin_basket{
+  margin-top:150px
+  }
+
+.align_center_basket{
+  text-align: center;
+}
+
+.font_size_header{
+  font-size: 1rem !important;
+}
+
+body {
+    background-color: pearl_white;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);
+.snip1418 {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  background: #ffffff;
+  text-align: left;
+  color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-perspective: 20em;
+  perspective: 20em;
+}
+.snip1418 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.snip1418 img {
+  max-width: 100%;
+  vertical-align: top;
+  position: relative;
+}
+.snip1418 .add-to-cart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 0px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  opacity: 0;
+  background-color: #409ad5;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 100% 0;
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+.snip1418 .add-to-cart i {
+  display: inline-block;
+  margin-right: 10px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #164666;
+  color: #ffffff;
+  font-size: 1.4em;
+}
+.snip1418 figcaption {
+  padding: 20px;
+}
+.snip1418 h3,
+.snip1418 p {
+  margin: 0;
+}
+.snip1418 h3 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.snip1418 p {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.snip1418 .price {
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 48px;
+  letter-spacing: 1px;
+}
+.snip1418 .price s {
+  margin-right: 5px;
+  opacity: 0.5;
+  font-size: 0.9em;
+}
+.snip1418 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.snip1418:hover .add-to-cart,
+.snip1418.hover .add-to-cart {
+  opacity: 1;
+  -webkit-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.snip1418:hover .add-to-cart i,
+.snip1418.hover .add-to-cart i {
+  background-color: #2980b9;
+}
+
+.margin_button_room {
+  margin-left: 8rem !important;
+}
+
+.search_button_width {
+  width: 80% !important;
+}
+
+.start_date_width {
+  width: 60% !important;
+  margin-left: 6rem !important;
+}
+
+.margin_left_start_date {
+  margin-left: 1.5rem !important;
+}
+
+.margin_right_end_date {
+  margin-right: 10.5rem !important;
+}
+
+.end_date_width {
+  width: 60% !important;
+}
+
+.padding_signup {
+  padding-top: 4rem !important;
+  padding-bottom: 1rem !important;
 }

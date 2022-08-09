@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/baskets", to: "baskets#show"
     post "/payment", to: "payment#create"
+    get "/history", to: "histories#show"
     resources :users
     namespace :admin do
       resources :dashboard

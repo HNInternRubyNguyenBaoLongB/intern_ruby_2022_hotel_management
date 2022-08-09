@@ -3,17 +3,43 @@ class RoomsController < ApplicationController
   before_action :check_blank_date, :check_date, only: :index
 
   def index
-    @room_ids = Room.new.room_ids(params[:start_date],
-                                  params[:end_date],
-                                  current_user.id)
-    @pagy, @rooms = pagy Room.not_ids(@room_ids)
-                             .by_description(params[:description]),
-                         items: Settings.room.room_per_page
+    if logged_in?
+      filter_if_logged_in
+      @start_date = params[:start_date]
+      @end_date = params[:end_date]
+    else
+      filter_if_guest
+    end
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def show; end
 
   private
+
+  def filter_if_logged_in
+    @room_ids = Room.new.room_ids(params[:start_date],
+                                  params[:end_date],
+                                  current_user.id)
+    @pagy, @rooms = pagy Room.not_ids(@room_ids)
+                             .by_description(params[:description]),
+                         items: Settings.room.room_per_page,
+                         link_extra: 'data-remote="true"'
+  end
+
+  def filter_if_guest
+    @pagy, @rooms = pagy Room.not_ids(
+      Room.by_between_date_for_guest(
+        params[:start_date],
+        params[:end_date]
+      )
+    ).by_description(params[:description]),
+                         items: Settings.room.room_per_page,
+                         link_extra: 'data-remote="true"'
+  end
 
   def find_rooms
     @room = Room.find_by id: params[:id]

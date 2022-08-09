@@ -1012,10 +1012,10 @@
   dependencies:
     spark-md5 "^3.0.0"
 
-"@rails/ujs@^6.0.0":
-  version "6.1.6"
-  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-6.1.6.tgz#de486ae0a663e1bed637a012cbb2739bfcfa2031"
-  integrity sha512-2M4zlthYmOC6X/tcPcFd//sIL26a7JbCpGNl8uIrQf+pR1Z47uhYt9cOwVqJTJZPurdy2k+YY3Pn64pqruAPEA==
+"@rails/ujs@^7.0.3-1":
+  version "7.0.3-1"
+  resolved "https://registry.yarnpkg.com/@rails/ujs/-/ujs-7.0.3-1.tgz#0a0f4f2b22b887bcbf6e0b0a72b8c86665cd31d9"
+  integrity sha512-g3LgpBAsWmW97xFxh5OTDgyEJLt63fEENJUYb/iNFRXY6aKLI/by6MjFw7x492DSP/+vKQa3oMEdNnjI9+yZgQ==
 
 "@rails/webpacker@5.4.3":
   version "5.4.3"
@@ -3952,6 +3952,11 @@ jest-worker@^26.5.0:
     "@types/node" "*"
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jquery-ujs@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/jquery-ujs/-/jquery-ujs-1.2.3.tgz#dcac6026ab7268e5ee41faf9d31c997cd4ddd603"
+  integrity sha512-59wvfx5vcCTHMeQT1/OwFiAj+UffLIwjRIoXdpO7Z7BCFGepzq9T9oLVeoItjTqjoXfUrHJvV7QU6pUR+UzOoA==
 
 jquery@>=1.12.0, jquery@^3.3.1, jquery@^3.6.0:
   version "3.6.0"

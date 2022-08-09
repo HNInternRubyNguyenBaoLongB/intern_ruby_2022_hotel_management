@@ -1,34 +1,26 @@
-<section class="projects-section bg-light" id="projects">
-  <div class="container px-4 px-lg-5">
-    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-      <div class="col-lg-4">
-        <%= image_tag room.images.first.photo_url, class: "img-fluid"%>
-      </div>
-      <div class="col-lg-5">
-        <div class="bg-white h-100 project">
-          <div class="d-flex h-100">
-            <div class="project-text w-100 text-lg-left">
-              <h4 class="text-white"><%= link_to room.name, room_url(room) %></h4>
-              <p class="star"><span> <%= sanitize render_star(room.rate_avg), attributes: %w(class data-icon) %> </span></p>
-              <span class="city"><%= room.description %></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3">
-        <div class="bg-white h-100 project">
-          <div class="d-flex h-100">
-            <div class="project-text w-100 text-lg-left">
-              <%= form_for room.bookings.build, html: {class: "form-signup"} do |f| %>
-                <%= f.hidden_field :room_id, value: room.id %>
-                <%= f.hidden_field :start_date, value: params[:start_date].blank? ? DateTime.now.to_date : params[:start_date] %>
-                <%= f.hidden_field :end_date, value: params[:end_date].blank? ? Settings.day.day_from_now.days.from_now.to_date : params[:end_date] %>
-                <div class="col"><button class="btn btn-primary margin-button" id="submitButton" type="submit"><%= t ".add_basket_button" %></button></div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="col-lg-4">
+  <figure class="snip1418"><%= image_tag room.images.first.photo_url, class: "img-fluid" %>
+    <div class="add-to-cart">
     </div>
+    <figcaption>
+      <h3><%= room.name %></h3>
+      <p><%= room.description %></p>
+      <div class="price">
+        <%= change_money(room.price) %>
+      </div>
+      <p class="star">
+        <span> <%= sanitize render_star(room.rate_avg), attributes: %w(class data-icon) %> </span>
+      </p>
+    </figcaption><a href="<%= room_url(room) %>"></a>
+  </figure>
+  <div>
+    <% if logged_in? %>
+      <%= form_for room.bookings.build do |f| %>
+        <%= f.hidden_field :room_id, value: room.id %>
+        <%= f.hidden_field :start_date, value: params[:start_date] %>
+        <%= f.hidden_field :end_date, value: params[:end_date] %>
+        <div class="col-auto margin_button_room"><button class="btn btn-primary" type="submit"><%= t ".add_basket_button" %></button></div>
+      <% end %>
+    <% end %>
   </div>
-</section>
+</div>

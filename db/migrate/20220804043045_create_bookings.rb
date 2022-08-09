@@ -4,7 +4,7 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.decimal :total_price
       t.datetime :start_date
       t.datetime :end_date
-      t.integer :status
+      t.integer :status, default: 0
       t.string :reason
       t.references :user, null: false, foreign_key: true
       t.references :room, null: false, foreign_key: true

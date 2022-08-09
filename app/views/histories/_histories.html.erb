@@ -1,0 +1,13 @@
+<tr>
+  <td><%= histories.user_name %>
+  <td><%= histories.total_price %>
+  <td><%= histories.bookings.count %>
+  <td>
+    <span class='<%= check_status(histories.status) %>'><%= histories.status %> </span>
+  </td>
+  <td>
+    <%= link_to bookings_path(bill_id: histories.id) do %>
+      <i class="fa-solid fa-eye"></i>
+    <% end %>
+  </td>
+<tr>

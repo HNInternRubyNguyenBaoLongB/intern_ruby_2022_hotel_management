@@ -1,6 +1,6 @@
 class PaymentController < ApplicationController
-  before_action :find_bill_pending, :find_bookings, :check_booking,
-                :calculate_price, only: :create
+  before_action :logged_in_user, :find_bill_pending, :find_bookings,
+                :check_booking, :calculate_price, only: :create
 
   def create
     ActiveRecord::Base.transaction do
@@ -39,13 +39,15 @@ class PaymentController < ApplicationController
       next if Booking.find_room_with_id(booking.room_id)
                      .check_exist_booking_with_room_ids(@room_ids).blank?
 
-      flash[:error] = t ".error_payment"
-      redirect_to root_path
+      booking.destroy
+      flash[:error] = t(".error_payment")
+      @is_exists = true
     end
+    redirect_to root_path if @is_exists
   end
 
   def find_bill_pending
-    @bill = Bill.pending.find_bill(current_user.id).first
+    @bill = Bill.pending.by_current_user(current_user.id).first
     return if @bill
 
     @bill = current_user.bills.build

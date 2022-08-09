@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
-  before_action :check_date, :check_exist_booking, :find_room, :find_bill,
-                :check_quantity_basket, :fill_params, only: :create
-  before_action :find_booking, only: :destroy
+  before_action :logged_in_user, :check_date, :check_exist_booking, :find_room,
+                :find_bill, :check_quantity_basket, :fill_params, only: :create
+  before_action :logged_in_user, :find_booking,
+                :check_status_booking, only: :destroy
 
   def create
     if @booking.save
@@ -15,14 +16,34 @@ class BookingsController < ApplicationController
 
   def destroy
     if @booking.destroy
+      check_status_destroy @booking
       flash[:success] = t(".booking_delete_success")
     else
       flash[:danger] = t(".booking_delete_denied")
     end
-    redirect_to baskets_path
+    redirect_to rooms_path
+  end
+
+  def index
+    @pagy, @bookings = pagy Booking.find_booking_with_bill_id(params[:bill_id])
+                                   .booking_order,
+                            items: Settings.booking.booking_per_page
   end
 
   private
+
+  def check_status_destroy booking
+    return if @booking.pending?
+
+    @bill = Bill.find_bill_with_booking(booking.bill_id)
+
+    @bill.first.total_price -= @booking.total_price
+    if @bill.first.total_price.zero?
+      @bill.first.destroy
+    else
+      @bill.first.save
+    end
+  end
 
   def bill_params
     params.require(:bill).permit(Bill::CREATABLE_ATTR)
@@ -49,7 +70,7 @@ class BookingsController < ApplicationController
   end
 
   def find_bill
-    @bill = Bill.pending.find_bill(current_user.id).first
+    @bill = Bill.pending.by_current_user(current_user.id).first
     return if @bill
 
     @bill = current_user.bills.build
@@ -102,5 +123,12 @@ class BookingsController < ApplicationController
 
     flash[:danger] = t ".basket_full"
     redirect_to rooms_path
+  end
+
+  def check_status_booking
+    return if @booking.checking? || @booking.status.pending?
+
+    flash[:danger] = t ".booking_was_checked"
+    redirect_to history_path
   end
 end
