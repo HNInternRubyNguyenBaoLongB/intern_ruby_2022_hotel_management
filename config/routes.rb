@@ -6,4 +6,10 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     resources :users, only: %i(new create show)
   end
+
+  scope "(:locale)/admin", locale: /en|vi/ do
+    get "/", to: "admin#index"
+    get "login", to: "admin#login"
+    post "/", to: "admin#index"
+  end
 end

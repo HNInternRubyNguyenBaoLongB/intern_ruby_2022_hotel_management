@@ -2,6 +2,7 @@ vi:
   layouts:
     application:
       title: Dracul Hotel
+      base_title: Quản lý khách sạn
     header:
       hotel_name: "Demo Hotel"
       register: "Đăng ký"
@@ -55,3 +56,40 @@ vi:
       create:
         find_error: "Sai Mail!"
         alert: "Sai mật khẩu!"
+  base:
+    footer:
+      copyright: Copyright
+      name: Quản lý khách sạn
+      privacy: Quyền riêng tư
+      term: chính sách
+      condition: các điều khoản
+    header:
+      setting: Cài đặt
+      logout: Đăng xuất
+      admin: Admin
+    sidebar:
+      room: Phòng
+      room_management: Quản lý phòng
+      bill: Hóa đơn
+      bill_management: Quản lý hóa đơn
+      bill_stat: Thống kê hóa đơn
+      bill_confirm: Duyệt hóa đơn
+      users: Khách hàng
+      user_management: Quản lý khách hàng
+      login_as: Đăng nhập bởi
+  admin:
+    index:
+      dashboard: Tổng quan
+      total_rooms: Tổng số phòng
+      view: Xem chi tiết
+      total_users: Tổng khách hàng
+      total_bills: Tổng hóa đơn
+      total_bills_pending: Tổng đơn chờ duyệt
+      month_stat: Tổng doanh thu theo tháng
+      room_stat: Tổng doanh thu theo phòng
+      latest_trans: Giao dịch gần nhất
+    login:
+      log_in: Đăng nhập
+      password: Mật khẩu
+      forget_password: Quên mật khẩu ?
+      remember_me: Ghi nhớ đăng nhập

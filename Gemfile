@@ -9,6 +9,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~> 4.1.3"
 gem "config"
 gem "font-awesome-sass", "~> 6.1.0"
+gem "image_processing", "1.9.3"
 gem "jbuilder", "~> 2.7"
 gem "jquery-rails"
 gem "mysql2", "~> 0.5"
