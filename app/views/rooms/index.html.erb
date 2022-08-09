@@ -1,0 +1,27 @@
+<%= render "layouts/header" %>
+<section class="signup-section" id="signup">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+          <i class="far fa fa-search fa-2x mb-2 text-white"></i>
+          <h2 class="text-white mb-5"><%= t ".search" %></h2>
+          <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <div class="row input-group-newsletter">
+              <!-- TO DO LATER -->
+              <div class="col"><input class="form-control" id="emailAddress" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+              <div class="col"><button class="btn btn-primary" id="submitButton" type="submit"><%= t ".search_button" %></button></div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-2 col-lg-4 mx-auto text-center">
+          <!-- add find by star -->
+        </div>
+      </div>
+    </div>
+  </section>
+<ul class="rooms">
+  <%= render @rooms %>
+</ul>
+<%== pagy_bootstrap_nav(@pagy) %>
+
+<%= render "layouts/footer" %>

@@ -7,8 +7,11 @@ class Room < ApplicationRecord
   validates :price, presence: true
   validates :status, presence: true
 
+  scope :room_order, ->{order(id: :asc)}
+  scope :by_rating, ->(rating){where(rate_avg: rating)}
+
   enum status: {
-    valid: 0,
+    avaiable: 0,
     booked: 1
   }
 end
