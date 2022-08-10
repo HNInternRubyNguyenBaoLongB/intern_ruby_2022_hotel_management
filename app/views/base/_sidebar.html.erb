@@ -3,7 +3,7 @@
     <div class="sb-sidenav-menu">
         <div class="nav">
             <div class="sb-sidenav-menu-heading"><%= t ".room" %></div>
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<%= admin_room_index_path %>">
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-bed"></i></div>
                 <%= t ".room_management" %>
             </a>
@@ -26,8 +26,10 @@
                 </a>
             </div>
         </div>
-        <div class="sb-sidenav-footer">
-            <div class="small"><%= t ".login_as" %></div>
-        </div>
+        <% if logged_in? %>
+            <div class="sb-sidenav-footer">
+            <div class="small"><%= t ".login_as" %><%= current_user.name %></div>
+            </div>
+        <% end %>
     </nav>
 </div>

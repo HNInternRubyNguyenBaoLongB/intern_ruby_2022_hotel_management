@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  enum role: {
+    user: 0,
+    admin: 1
+  }
+
   UPDATABLE_ATTRS = %i(name email password password_confirmation).freeze
 
   has_many :reviews, dependent: :destroy

@@ -1,8 +1,9 @@
 en:
   layouts:
+    admin:
+      base_title: Hotel Management
     application:
       title: Dracul Hotel
-      base_title: Hotel Management
     header:
       hotel_name: "Demo Hotel"
       register: "Register"
@@ -64,9 +65,10 @@ en:
       term: Terms
       condition: Conditions
     header:
-      setting: Setting
-      logout: Logout
+      settings: Setting
+      log_out: Logout
       admin: Admin
+      profile: Profile
     sidebar:
       room: Rooms
       room_management: Manage Room
@@ -78,21 +80,17 @@ en:
       user_management: Manage users
       login_as: Login as
   admin:
-    index:
-      dashboard: Dashboard
-      total_rooms: Total Rooms
-      view: View details
-      total_users: Total Users
-      total_bills: Total Bills
-      total_bills_pending: Total Bills Pending
-      month_stat: Total revenue
-      room_stat: Room revenue
-      latest_trans: Most recent transaction
-    login:
-      log_in: Login
-      password: Password
-      forget_password: Forget Password ?
-      remember_me: Remember me
+    dashboard:
+      index:
+        dashboard: Dashboard
+        total_rooms: Total Rooms
+        view: View details
+        total_users: Total Users
+        total_bills: Total Bills
+        total_bills_pending: Total Bills Pending
+        month_stat: Total revenue
+        room_stat: Room revenue
+        latest_trans: Most recent transaction
   users:
     update:
       old_password_fail: "Wrong old password"
