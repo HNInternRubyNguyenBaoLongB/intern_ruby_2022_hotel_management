@@ -20,6 +20,7 @@ room:
   room_per_page: 5
   rating_max: 5
   image: "width:80%"
+  usd: 23000
 booking:
   booking_per_page: 5
 day:
