@@ -12,8 +12,7 @@
     <%= csp_meta_tag %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="sb-nav-fixed">
@@ -21,6 +20,9 @@
     <div id="layoutSidenav">
       <%= render "base/sidebar" %>
       <div id="layoutSidenav_content">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
         <%= yield %>
         <%= render "base/footer" %>
       </div>

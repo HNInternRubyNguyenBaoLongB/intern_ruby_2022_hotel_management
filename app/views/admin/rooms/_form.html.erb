@@ -1,0 +1,34 @@
+<%= form_for(@room, url: admin_rooms_path, html: {multipart: true}) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="field">
+    <%= f.label :name, t(".name") %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, t(".des") %>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :price, t(".price") %>
+    <%= f.text_field :price, class: "form-control", :value => number_with_precision(f.object.price)%>
+  </div>
+
+  <div class="field">
+    <%= f.label :types, t(".type") %><br>
+    <%= f.select(:types, Room.types.keys.to_a, {include_blank: t(".select_room")}, { :class => 'form-control' }) %>
+  </div>
+  <br>
+
+  <div class="field">
+    <%= f.fields_for :images do |image| %>
+      <%= render "image_fields", f: image %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= link_to_add_association (t ".add_a_photo"), f, :images, class: "link-primary" %>
+    <br>
+    <%= f.submit t(".create-btn"), class: "btn btn-primary" %>
+  </div>
+<% end %>

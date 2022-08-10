@@ -1,4 +1,4 @@
-<%= render "layouts/header" %><%= provide :title, t(".login") %>
+<%= provide :title, t(".login") %>
 <section class="signup-section" id="signup">
   <div class="container px-4 px-lg-5">
     <div class="row gx-4 gx-lg-5">
@@ -17,7 +17,7 @@
                 <%= f.label :remember_me, class: "checkbox inline text-white mb-4 align-left col-md-8" do %>
                   <%= f.check_box :remember_me %>
                   <span> <%= t ".remember_me" %> </span>
-        u        <% end %>
+                <% end %>
                 <%= link_to t(".forgot_password"), "#", class: "inline text-white mb-4 align-right col-md-4" %>
               </div>
               <%= f.submit t(".submit"), class: "btn btn-primary" %>

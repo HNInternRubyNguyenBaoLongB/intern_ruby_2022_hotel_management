@@ -1,8 +1,8 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      <%= pluralize object.errors.count, "error" %>.
-      <%= t ".form_contain" %>
+      <%= error = t "shared.error" %>
+      <%= t"shared.text_alert" %><%= pluralize object.errors.count, error %>.
     </div>
     <ul>
       <% object.errors.full_messages.each do |msg| %>

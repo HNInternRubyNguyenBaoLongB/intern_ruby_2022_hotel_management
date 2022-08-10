@@ -10,6 +10,7 @@
     "bootstrap": "^5.2.0",
     "chart.js": "^3.9.1",
     "font-awesome": "^4.7.0",
+    "cocoon": "github:nathanvda/cocoon#c24ba53",
     "jquery": "^3.6.0",
     "package": "^1.0.1",
     "swiffy-slider": "^1.5.3",
