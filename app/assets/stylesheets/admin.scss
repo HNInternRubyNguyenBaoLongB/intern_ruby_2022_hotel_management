@@ -13010,3 +13010,15 @@ body {
 	content: " ";
 	display: table;
 }
+
+.select {
+  width: 50%;
+  min-width: 5ch;
+  max-width: 10ch;
+  border: 1px solid var(--select-border);
+  border-radius: 1.25em;
+  padding: 0.25em 0.5em ;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+}
