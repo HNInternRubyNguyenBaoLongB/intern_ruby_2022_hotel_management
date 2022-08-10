@@ -10,7 +10,7 @@
             <%= link_to current_user.name, "#", class: "dropdown dropdown-toggle" %>
             <div class="dropdown-content">
               <%= link_to t(".profile"), "#" %>
-              <%= link_to t(".settings"), "#" %>
+              <%= link_to t(".settings"), edit_user_path(current_user) %>
               <%= button_to t(".log_out"), logout_path, method: :delete, class: "btn btn-danger" %>
             </div>
           </li>

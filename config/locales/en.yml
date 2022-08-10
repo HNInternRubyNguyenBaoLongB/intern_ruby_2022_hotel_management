@@ -93,3 +93,21 @@ en:
       password: Password
       forget_password: Forget Password ?
       remember_me: Remember me
+  users:
+    update:
+      old_password_fail: "Wrong old password"
+    form:
+      save_button: "Save"
+      name: "Name"
+      email: "Email"
+      old_password: "Old Password"
+      password: "New Password"
+      confirm_password: "Confirm Password"
+      edit: "Edit"
+      enter_name: "Enter name"
+      enter_email: "Enter email"
+      enter_old_password: "Enter old password"
+      enter_new_password: "Enter new password"
+      enter_confirm_password: "Enter confirm password"
+    edit:
+      heading: "Edit User"

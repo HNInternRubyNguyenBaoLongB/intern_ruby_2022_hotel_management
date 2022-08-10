@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
   include SessionsHelper
+  protect_from_forgery with: :exception
   before_action :set_locale
 
   private
@@ -16,7 +16,6 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     return if logged_in?
 
-    store_location
     flash[:danger] = t ".logged_in_alert"
     redirect_to login_url
   end
