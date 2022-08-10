@@ -21,3 +21,5 @@ User.create!(name: "Admin",
   room.images.attach(io: image, filename: "tour-4.jpg")
   room.save
 end
+image = File.open("app/assets/images/bg-signup.jpg")
+Room.first.images.attach(io: image, filename: "bg-signup.jpg")

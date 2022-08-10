@@ -1,2 +1,36 @@
-<h1>Rooms#show</h1>
-<p>Find me in app/views/rooms/show.html.erb</p>
+<link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet">
+<%= render "layouts/header" %>
+<div class="swiffy-slider slider-item-helper slider-nav-caret">
+  <ul class="slider-container">
+    <% @room.images.each do |image| %>
+      <li><%= image_tag image, class: "img-fluid" %></li>
+    <% end %>
+  </ul>
+
+  <button type="button" class="slider-nav"></button>
+  <button type="button" class="slider-nav slider-nav-next"></button>
+
+  <div class="slider-indicators">
+    <% @room.images.each_with_index do |image, index| %>
+      <% if index == 0 %>
+        <button class="active"></button>
+      <% else %>
+        <button></button>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<section class="about-section text-center" id="about">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="text-white mb-4"><%= @room.name %></h2>
+        <p class="text-white-50">
+          <%= @room.description %>
+        </p>
+      </div>
+    </div>
+    <%= image_tag "ipad.png", class: "img-fluid", alt: "..." %>
+  </div>
+</section>
+<%= render "layouts/footer" %>

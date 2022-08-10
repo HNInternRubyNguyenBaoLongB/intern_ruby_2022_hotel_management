@@ -91,6 +91,25 @@ en:
         month_stat: Total revenue
         room_stat: Room revenue
         latest_trans: Most recent transaction
+    room:
+      index:
+        room: List rooms
+        add: Add room
+      new:
+        room: List rooms
+        add: Add room
+      form:
+        single: Single
+        double: Double
+        king: King
+        queen: Queen
+        name: Name
+        price: Price/day
+        des: Description
+        photo: Photo
+        create-btn: Create Room
+      create:
+        alert_not_save: Save room failed
   users:
     update:
       old_password_fail: "Wrong old password"
@@ -109,3 +128,6 @@ en:
       enter_confirm_password: "Enter confirm password"
     edit:
       heading: "Edit User"
+  shared:
+    error: Errors !!!
+    text_alert: "Have "
