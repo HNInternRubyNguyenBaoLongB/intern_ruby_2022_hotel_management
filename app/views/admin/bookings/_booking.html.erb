@@ -1,0 +1,11 @@
+<tbody class = "booking" >
+  <tr>
+    <td><%= booking.id %></td>
+    <td><%= number_to_currency(change_money(booking.total_price)) %></td>
+    <td><%= booking.start_date.strftime('%FT%T') %></td>
+    <td><%= booking.end_date.strftime('%FT%T') %></td>
+    <td><%= booking.room_name %></td>
+    <td><p class=<%= status_color(booking.status) %>><%= booking.status %></p></td>
+    <td><%= booking.created_at.strftime('%FT%T') %></td>
+  <tr>
+</tbody>

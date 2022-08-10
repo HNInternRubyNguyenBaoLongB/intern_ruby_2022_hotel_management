@@ -142,6 +142,31 @@ vi:
         status: Trạng thái
         phone: Số điện thoại
         key_search: Tên hoặc số điện thoại
+      bill:
+        view: Xem
+        edit: Sửa
+      form:
+        user_name: Tên khách hàng
+        phone: Số điện thoại
+        price: Tổng tiền
+        status: Trạng thái
+        created_at: Ngày tạo hóa đơn
+        create-btn: Lưu
+        booking: Danh sách phòng đặt
+      edit:
+        bill: Quản lý hóa đơn
+        update: Cập nhật hóa đơn
+    bookings:
+      index:
+        search: Tìm kiếm
+        no: STT
+        price: Tổng tiền
+        started_at: Ngày đặt phòng
+        ended_at: Ngày trả phòng
+        created_at: Ngày tạo
+        room: Phòng
+        status: Trạng thái
+        bookings: Danh sách phòng đặt
   users:
     update:
       old_password_fail: "Sai mật khẩu cũ"
@@ -163,3 +188,11 @@ vi:
   shared:
     error: Lỗi !!!
     text_alert: "Xảy ra "
+  send_bill_mailer:
+    send_bill_mail:
+      subject: Xác nhận hóa đơn
+      hi: Xin chào
+      confirm: Hóa đơn của bạn đã được xác nhận
+      bill_id: Mã hóa đơn của bạn là
+      list_room: Danh sách phòng đã đặt của bạn là
+      thanks: Cảm ơn bạn vì đã lựa chọn khách sạn của chúng tôi
