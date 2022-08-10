@@ -15,7 +15,7 @@ class Bill < ApplicationRecord
   has_many :bookings, dependent: :destroy
   belongs_to :user
 
-  delegate :name, :phone, to: :user, prefix: :user
+  delegate :name, :phone, :email, to: :user, prefix: :user
 
   scope :recent_bills, ->{order(created_at: :asc)}
   scope :by_status, ->(status){where(status: status) if status.present?}
