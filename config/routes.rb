@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :dashboard
       resources :rooms
+      resources :bills
     end
     resources :rooms
     resources :bookings

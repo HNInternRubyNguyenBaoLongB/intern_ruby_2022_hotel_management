@@ -1,6 +1,13 @@
 class Booking < ApplicationRecord
   CREATABLE_ATTRS = %i(room_id bill_id total_price start_date end_date).freeze
 
+  enum status: {
+    pending: 0,
+    checking: 1,
+    confirm: 2,
+    abort: 3
+  }
+
   belongs_to :user
   belongs_to :room
   belongs_to :bill
@@ -34,11 +41,4 @@ class Booking < ApplicationRecord
                                              user_id).pluck("room_id")
     @room_ids_checking + @room_ids_pending
   end
-
-  enum status: {
-    pending: 0,
-    checking: 1,
-    confirm: 2,
-    abort: 3
-  }
 end

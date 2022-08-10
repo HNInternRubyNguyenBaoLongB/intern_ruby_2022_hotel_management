@@ -1,0 +1,10 @@
+<tbody>
+  <tr>
+    <td><%= bill.id %></td>
+    <td><%= number_to_currency(change_money(bill.total_price)) %></td>
+    <td><%= bill.user_name %></td>
+    <td><%= bill.user_phone %></td>
+    <td><p class=<%= status_color(bill.status) %>><%= bill.status %></p></td>
+    <td><%= bill.created_at.strftime('%FT%T') %></td>
+  <tr>
+</tbody>
