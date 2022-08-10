@@ -94,3 +94,7 @@ vi:
       password: Mật khẩu
       forget_password: Quên mật khẩu ?
       remember_me: Ghi nhớ đăng nhập
+  room_admin:
+    index:
+      room: Danh sách phòng
+      dashboard: Dashboard

@@ -94,3 +94,7 @@ en:
       password: Password
       forget_password: Forget Password ?
       remember_me: Remember me
+  room_admin:
+    index:
+      room: List rooms
+      dashboard: Dashboard
