@@ -6,7 +6,11 @@ class SessionsController < ApplicationController
   def create
     if @user&.authenticate params[:session][:password]
       log_in @user
-      redirect_to root_path
+      if @user.user?
+        redirect_to root_path
+      else
+        redirect_to admin_index_path
+      end
     else
       flash.now[:danger] = t ".alert"
       render :new

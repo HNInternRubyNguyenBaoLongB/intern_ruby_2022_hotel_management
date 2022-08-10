@@ -64,9 +64,10 @@ vi:
       term: chính sách
       condition: các điều khoản
     header:
-      setting: Cài đặt
-      logout: Đăng xuất
+      settings: Cài đặt
+      log_out: Đăng xuất
       admin: Admin
+      profile: Hồ sơ
     sidebar:
       room: Phòng
       room_management: Quản lý phòng
@@ -76,7 +77,7 @@ vi:
       bill_confirm: Duyệt hóa đơn
       users: Khách hàng
       user_management: Quản lý khách hàng
-      login_as: Đăng nhập bởi
+      login_as: "Đăng nhập bởi "
   admin:
     index:
       dashboard: Tổng quan

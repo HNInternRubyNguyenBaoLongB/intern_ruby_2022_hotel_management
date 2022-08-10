@@ -7,9 +7,10 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#!"><%= t ".setting" %></a></li>
+        <li><%= link_to t(".profile"), "#", class: "dropdown-item" %></li>
+        <li> <%= link_to t(".settings"), "#", class: "dropdown-item" %></li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#!"><%= t ".logout" %></a></li>
+        <li><%= button_to t(".log_out"), logout_path, method: :delete, class: "dropdown-item" %></li>
       </ul>
     </li>
   </ul>

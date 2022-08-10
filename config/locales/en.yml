@@ -64,9 +64,10 @@ en:
       term: Terms
       condition: Conditions
     header:
-      setting: Setting
-      logout: Logout
+      settings: Setting
+      log_out: Logout
       admin: Admin
+      profile: Profile
     sidebar:
       room: Rooms
       room_management: Manage Room

@@ -19,5 +19,9 @@ class User < ApplicationRecord
   validates :phone, presence: true,
             format: {with: Settings.user.phone.regex_format}
 
+  enum role: {
+    user: 0,
+    admin: 1
+  }
   has_secure_password
 end
