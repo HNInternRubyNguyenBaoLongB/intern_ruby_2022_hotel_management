@@ -5,8 +5,7 @@ class Room < ApplicationRecord
   accepts_nested_attributes_for :images, reject_if: :all_blank,
                                  allow_destroy: true
 
-  validates :name, presence: true
-  validates :price, presence: true
+  validates :name, :price, :types, presence: true
 
   scope :room_order, ->{order(id: :asc)}
   scope :by_rating, ->(rating){where("rate_avg = ?", rating)}
@@ -28,12 +27,12 @@ class Room < ApplicationRecord
   scope :not_ids, ->(ids){where.not(id: ids)}
 
   enum types: {
-    single: 0,
-    double: 1,
-    queen: 2,
-    king: 3
+    Single: 0,
+    Double: 1,
+    Queen: 2,
+    King: 3
   }
-
   scope :room_order, ->{order(id: :asc)}
+  scope :recent_rooms, ->{order(created_at: :desc)}
   scope :by_rating, ->(rating){where(rate_avg: rating)}
 end

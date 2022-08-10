@@ -91,7 +91,7 @@ en:
         month_stat: Total revenue
         room_stat: Room revenue
         latest_trans: Most recent transaction
-    room:
+    rooms:
       index:
         room: List rooms
         add: Add room
@@ -108,6 +108,7 @@ en:
         des: Description
         photo: Photo
         create-btn: Create Room
+        select_room: Select Room
       create:
         alert_not_save: Save room failed
   users:
