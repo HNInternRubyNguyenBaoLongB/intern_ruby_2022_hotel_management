@@ -5,12 +5,9 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     resources :users
-    resources :rooms
-  end
-
-  scope "(:locale)/admin", locale: /en|vi/ do
-    get "/", to: "admin#index"
-    get "login", to: "admin#login"
-    post "/", to: "admin#index"
+    namespace :admin do
+      resources :dashboard
+      resources :room
+    end
   end
 end

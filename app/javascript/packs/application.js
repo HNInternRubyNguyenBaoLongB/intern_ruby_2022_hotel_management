@@ -10,7 +10,8 @@ import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 require('./iconify.min')
 require('./scripts')
-
+import "bootstrap"
+import Chart from 'chart.js/auto'
 
 Rails.start()
 Turbolinks.start()
