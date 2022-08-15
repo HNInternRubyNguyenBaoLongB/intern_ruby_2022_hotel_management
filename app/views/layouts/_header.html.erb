@@ -5,7 +5,7 @@
       <ul class="navbar-nav ms-auto">
         <% if logged_in? %>
           <li class="nav-item"><%= link_to t(".register"), "#about", class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to t(".view"), "#projects", class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to t(".view"), rooms_path, class: "nav-link" %></li>
           <li class="dropdown nav-link">
             <%= link_to current_user.name, "#", class: "dropdown dropdown-toggle" %>
             <div class="dropdown-content">

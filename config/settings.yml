@@ -16,3 +16,6 @@ user:
 home:
   preview_page_link: "https://startbootstrap.com/theme/grayscale/"
   contact_form_link: "https://startbootstrap.com/solution/contact-forms"
+room:
+  room_per_page: 5
+  rating_max: 5
