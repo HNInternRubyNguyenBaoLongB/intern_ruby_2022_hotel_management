@@ -91,6 +91,27 @@ vi:
         month_stat: Tổng doanh thu theo tháng
         room_stat: Tổng doanh thu theo phòng
         latest_trans: Giao dịch gần nhất
+    room:
+      index:
+        room: Danh sách phòng
+        add: Thêm phòng
+      new:
+        room: Danh sách phòng
+        add: Thêm phòng
+      form:
+        single: Phòng đơn
+        double: Phòng đôi
+        king: Phòng King
+        queen: Phòng Queen
+        name: Tên phòng
+        price: Giá phòng/ngày
+        des: Mô tả
+        type: Kiểu phòng
+        photo: Ảnh
+        create-btn: Tạo phòng
+      create:
+        alert: Tạo phòng thành công
+        alert_not_save: Tạo phòng thất bại
   users:
     update:
       old_password_fail: "Sai mật khẩu cũ"
@@ -109,3 +130,6 @@ vi:
       enter_confirm_password: "Xác nhận mật khẩu"
     edit:
       heading: "Chỉnh sửa người dùng"
+  shared:
+    error: Lỗi !!!
+    text_alert: "Xảy ra "
