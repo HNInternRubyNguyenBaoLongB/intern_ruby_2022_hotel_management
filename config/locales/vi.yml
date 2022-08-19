@@ -1,4 +1,5 @@
 vi:
+  photo:
   layouts:
     admin:
       base_title: Quản lý khách sạn
@@ -91,10 +92,14 @@ vi:
         month_stat: Tổng doanh thu theo tháng
         room_stat: Tổng doanh thu theo phòng
         latest_trans: Giao dịch gần nhất
-    room:
+    rooms:
       index:
         room: Danh sách phòng
         add: Thêm phòng
+        name: Tên phòng
+        type: Kiểu phòng
+        description: Mô tả
+        price: Giá phòng
       new:
         room: Danh sách phòng
         add: Thêm phòng
@@ -109,9 +114,14 @@ vi:
         type: Kiểu phòng
         photo: Ảnh
         create-btn: Tạo phòng
+        select_room: Chọn kiểu phòng
+        add_a_photo: Thêm ảnh
       create:
         alert: Tạo phòng thành công
         alert_not_save: Tạo phòng thất bại
+      image_fields:
+        photo: Ảnh
+        remove: Xóa
   users:
     update:
       old_password_fail: "Sai mật khẩu cũ"

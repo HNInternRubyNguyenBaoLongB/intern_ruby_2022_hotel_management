@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :users
     namespace :admin do
       resources :dashboard
-      resources :room
+      resources :rooms
     end
     resources :rooms
   end
