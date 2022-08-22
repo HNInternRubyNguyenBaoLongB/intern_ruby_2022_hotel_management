@@ -19,6 +19,7 @@ home:
 room:
   room_per_page: 5
   rating_max: 5
+  image: "width:80%"
 booking:
   booking_per_page: 5
 day:

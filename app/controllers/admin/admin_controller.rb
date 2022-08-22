@@ -1,6 +1,8 @@
 class Admin::AdminController < ApplicationController
   layout "admin"
+
   before_action :logged_in_user, :check_admin
+
   def index; end
 
   private
