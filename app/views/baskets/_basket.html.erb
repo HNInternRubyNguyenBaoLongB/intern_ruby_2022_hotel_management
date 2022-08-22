@@ -1,0 +1,29 @@
+<section class="projects-section bg-light" id="projects">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+      <div class="col-lg-4">
+        <%= image_tag basket.room.images.first.photo_url, class: "img-fluid"%>
+      </div>
+      <div class="col-lg-5">
+        <div class="bg-white h-100 project">
+          <div class="d-flex h-100">
+            <div class="project-text w-100 text-lg-left">
+              <h4 class="text-white"><%= link_to basket.room.name, room_url(basket.room) %></h4>
+              <p class="star"><span> <%= sanitize render_star(basket.room.rate_avg), attributes: %w(class data-icon) %> </span></p>
+              <span class="city"><%= basket.start_date.to_date %> -> <%= basket.end_date.to_date %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="bg-white h-100 project">
+          <div class="d-flex h-100">
+            <div class="project-text w-100 text-lg-left">
+              <%= button_to t(".delete"), basket, method: :delete, data: { confirm: t(".confirm_dialog") } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_012034) do
   create_table "bills", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.decimal "total_price", precision: 10
     t.bigint "user_id", null: false
-    t.bigint "discount_id", null: false
+    t.bigint "discount_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["discount_id"], name: "index_bills_on_discount_id"
@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2022_08_15_012034) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_reviews_on_room_id"
+    t.index ["user_id", "room_id", "created_at"], name: "index_reviews_on_user_id_and_room_id_and_created_at"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
@@ -120,7 +121,6 @@ ActiveRecord::Schema.define(version: 2022_08_15_012034) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bills", "discounts"
   add_foreign_key "bills", "users"
   add_foreign_key "bookings", "bills"
   add_foreign_key "bookings", "rooms"

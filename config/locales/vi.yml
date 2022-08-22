@@ -143,3 +143,29 @@ vi:
   shared:
     error: Lỗi !!!
     text_alert: "Xảy ra "
+  rooms:
+    room:
+      add_basket_button: "Thêm"
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+    index:
+      start_date: "Ngày bắt đầu"
+      end_date: "Ngày kết thúc"
+      enter_description: "Điền vào mô tả..."
+      search_button: "Tìm kiếm"
+      fill_all_params: "Vui lòng điền đầy đủ ngày bắt đầu và kết thúc!!!"
+      date_danger: "Vui lòng chọn đúng ngày!!!"
+      can_not_find_room: "Không tìm thấy room"
+  bookings:
+    create:
+      room_request_success: "Đặt phòng thành công"
+      room_request_denied: "Đặt phòng thất bại, ngày giờ này đã có người đặt"
+      choose_date: "Hãy chọn phòng của bạn"
+      room_was_booking: "Room đã được đặt bởi một người khác vào ngày giờ này"
+      alert_date_invalid: "Ngày giờ không hợp lệ"
+    destroy:
+      booking_delete_success: "Xóa thành công"
+  baskets:
+    basket:
+      delete: "Xóa"
+      confirm_dialog: "Bạn chắc chắn chưa?"

@@ -14,6 +14,11 @@
               <%= button_to t(".log_out"), logout_path, method: :delete, class: "btn btn-danger" %>
             </div>
           </li>
+          <li class="nav-item">
+            <%= link_to baskets_path do %>
+              <i class="far fa fa-shopping-basket fa-2x mb-2 text-white margin-basket"></i>
+            <% end %>
+          </li>
         <% else %>
           <li class="nav-item"><%= link_to t(".login"), login_path, class: "nav-link" %></a></li>
         <% end %>

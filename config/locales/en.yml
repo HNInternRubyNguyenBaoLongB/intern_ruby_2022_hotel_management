@@ -131,3 +131,29 @@ en:
   shared:
     error: Errors !!!
     text_alert: "Have "
+  rooms:
+    room:
+      add_basket_button: "Add"
+      start_date: "Start Date"
+      end_date: "End Date"
+    index:
+      start_date: "Start date"
+      end_date: "End date"
+      enter_description: "Enter description..."
+      search_button: "Search"
+      fill_all_params: "Please fill all data START DATE and END DATE!!!"
+      date_danger: "Please choose RIGHT DATE!!!"
+      can_not_find_room: "Cannot find room"
+  bookings:
+    create:
+      room_request_success: "Success order room"
+      room_request_denied: "Cannot order room"
+      choose_date: "Please choose date"
+      room_was_booking: "The room is already booked by someone else at this time"
+      alert_date_invalid: "Date invalid!"
+    destroy:
+      booking_delete_success: "Delete success"
+  baskets:
+    basket:
+      delete: "Delete"
+      confirm_dialog: "Confirm delete?"

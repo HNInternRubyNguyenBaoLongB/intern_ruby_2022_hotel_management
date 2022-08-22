@@ -6,7 +6,7 @@
         <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
         <h2 class="text-white mb-5"><%= t ".login" %></h2>
           <div class="row input-group-newsletter">
-            <%= form_for :session, :html => {:class => "form-signup"}, url: login_path do |f| %>
+            <%= form_for :session, html: {class: "form-signup"}, url: login_path do |f| %>
               <div class="row">
                 <%= f.email_field :email, class: "form-control", placeholder: t(".enter_email") %>
               </div>

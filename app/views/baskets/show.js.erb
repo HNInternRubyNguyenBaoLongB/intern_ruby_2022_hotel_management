@@ -1,0 +1,4 @@
+$('#render_bookings').html('<%= j render partial: "basket", collection: @bookings %>');
+$('#pagy_containerr').html('<%== pagy_bootstrap_nav @pagy %>');
+Pagy.init(document.getElementById('render_bookings'));
+Pagy.init(document.getElementById('pagy_containerr'));
