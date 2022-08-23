@@ -5,20 +5,17 @@
     <%= f.label :name, t(".name") %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
-
   <div class="field">
     <%= f.label :description, t(".des") %>
     <%= f.text_field :description, class: "form-control" %>
   </div>
-
    <div class="field">
     <%= f.label :price, t(".price") %>
     <%= f.text_field :price, class: "form-control", :value => number_to_currency(f.object.price)%>
   </div>
-
   <div class="field">
     <%= f.label :types, t(".type") %><br>
-    <%= f.select(:types, Room.types.keys.to_a, {include_blank: t(".select_room")}, { :class => 'form-control' }) %>
+    <%= f.select(:types, Room.types.keys.to_a, {include_blank: t(".select_room")}, { :class => 'form-select' }) %>
   </div>
   <br>
   <% if f.object.id? %>

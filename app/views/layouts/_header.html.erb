@@ -20,6 +20,7 @@
             <% end %>
           </li>
         <% else %>
+          <li class="nav-item"><%= link_to t(".preview"), rooms_path, class: "nav-link" %></a></li>
           <li class="nav-item"><%= link_to t(".login"), login_path, class: "nav-link" %></a></li>
         <% end %>
       </ul>

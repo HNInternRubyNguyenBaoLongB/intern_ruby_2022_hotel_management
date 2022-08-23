@@ -13,6 +13,10 @@
             <div id="pagy_containerr">
               <%== pagy_bootstrap_nav @pagy %>
             </div>
+            <%= form_for @bill, url: payment_path, method: :post, :html => {:class => "form-signup"} do |f| %>
+              <%= f.hidden_field :bill_id, value: @bill.id %>
+              <div class="col"><button class="btn btn-primary margin-button" id="submitButton" type="submit"><%= t ".payment" %></button></div>
+            <% end %>
           </div>
       </div>
     </div>

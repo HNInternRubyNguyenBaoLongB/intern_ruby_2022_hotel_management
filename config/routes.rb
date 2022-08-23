@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get "/baskets", to: "baskets#show"
+    post "/payment", to: "payment#create"
     resources :users
     namespace :admin do
       resources :dashboard
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
     end
     resources :rooms
     resources :bookings
+    resources :baskets
   end
 end

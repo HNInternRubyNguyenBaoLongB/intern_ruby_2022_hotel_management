@@ -1,27 +1,28 @@
-en:
+vi:
+  photo:
   layouts:
     admin:
-      base_title: Hotel Management
+      base_title: Quản lý khách sạn
     application:
       title: Dracul Hotel
     header:
       hotel_name: "Demo Hotel"
-      register: "Register"
-      view: "See room"
-      login: "Log in"
-      log_out: "Log out"
-      profile: "Profile"
-      settings: "Settings"
+      register: "Đăng ký"
+      view: "Xem phòng"
+      login: "Đăng nhập"
+      log_out: "Đăng xuất"
+      profile: "Thông tin"
+      settings: "Cài đặt"
     footer:
-      address: "Address"
-      address_content: "Le Quang Dao Nam Tu Liem Ha Noi"
+      address: "Địa chỉ"
+      address_content: "Lê Quang Đạo Nam Từ Liêm Hà Nội"
       email: "Email"
       email_content: "sun-asterisk.com"
       phone: "Hotline"
       phone_content: "0984738475"
   pages:
     home:
-      started: "Log In"
+      started: "Đăng Nhập"
       hotel_name: "Demo Hotel"
       hotel_slogan: "Now or never"
       hotel_description_first: "Hotel for everyone "
@@ -33,52 +34,52 @@ en:
       second_description_content: "River surrounding hotel"
       third_description: "Mountain"
       third_description_content: "Mountain very big"
-      hotel_subcribe: "Subcribe"
-      hotel_notify: "Notify"
-      require_email: "Require true email"
-      valid_email: "Require valid email"
-      successful_form: "Successful send form"
+      hotel_subcribe: "Theo dõi"
+      hotel_notify: "Thông báo"
+      require_email: "Cần điền đúng email"
+      valid_email: "Cần điền email hợp lệ"
+      successful_form: "Gửi form thành công"
   sessions:
     new:
-      login: "Login"
-      submit: "Submit"
+      login: "Đăng Nhập"
+      submit: "Đăng nhập"
       email: "Email"
-      password: "Password"
-      remember_me: "Remember me"
-      sign_up: "Sign Up!"
-      forgot_password: "Forgot Password!"
-      register: "Register!"
-      new_user: "New User? "
-      enter_email: "Enter your email here"
-      enter_password: "Enter your password here"
+      password: "Mật khẩu"
+      remember_me: "Duy trì đăng nhập"
+      sign_up: "Đăng ký!"
+      forgot_password: "Quên mật khẩu!"
+      register: "Đăng ký!"
+      new_user: "Người dùng mới? "
+      enter_email: "Nhập email của bạn"
+      enter_password: "Nhập mật khẩu của bạn"
     create:
       controller:
-        find_error: "Login error!"
+        find_error: "Lỗi đăng nhập!"
       create:
-        find_error: "Invalid mail!"
-        alert: "Wrong password!"
+        find_error: "Sai Mail!"
+        alert: "Sai mật khẩu!"
   base:
     footer:
       copyright: Copyright
-      name: Hotel Management
-      privacy: Privacy Policy
-      term: Terms
-      condition: Conditions
+      name: Quản lý khách sạn
+      privacy: Quyền riêng tư
+      term: chính sách
+      condition: các điều khoản
     header:
-      settings: Setting
-      log_out: Logout
+      settings: Cài đặt
+      log_out: Đăng xuất
       admin: Admin
-      profile: Profile
+      profile: Hồ sơ
     sidebar:
-      room: Rooms
-      room_management: Manage Room
-      bill: Bills
-      bill_management: Manage bills
-      bill_stat: Bills Statics
-      bill_confirm: Confrim bills
-      users: Users
-      user_management: Manage users
-      login_as: Login as
+      room: Phòng
+      room_management: Quản lý phòng
+      bill: Hóa đơn
+      bill_management: Quản lý hóa đơn
+      bill_stat: Thống kê hóa đơn
+      bill_confirm: Duyệt hóa đơn
+      users: Khách hàng
+      user_management: Quản lý khách hàng
+      login_as: "Đăng nhập bởi "
   admin:
     dashboard:
       index:
@@ -93,11 +94,15 @@ en:
         latest_trans: Most recent transaction
     rooms:
       index:
-        room: List rooms
-        add: Add room
+        room: Danh sách phòng
+        add: Thêm phòng
+        name: Tên phòng
+        type: Kiểu phòng
+        description: Mô tả
+        price: Giá phòng
       new:
-        room: List rooms
-        add: Add room
+        room: Danh sách phòng
+        add: Thêm phòng
       form:
         single: Single
         double: Double
@@ -110,25 +115,29 @@ en:
         create-btn: Create Room
         select_room: Select Room
       create:
-        alert_not_save: Save room failed
+        alert: Tạo phòng thành công
+        alert_not_save: Tạo phòng thất bại
+      image_fields:
+        photo: Ảnh
+        remove: Xóa
   users:
     update:
-      old_password_fail: "Wrong old password"
+      old_password_fail: "Sai mật khẩu cũ"
     form:
-      save_button: "Save"
-      name: "Name"
+      save_button: "Lưu"
+      name: "Tên người dùng"
       email: "Email"
-      old_password: "Old Password"
-      password: "New Password"
-      confirm_password: "Confirm Password"
-      edit: "Edit"
-      enter_name: "Enter name"
-      enter_email: "Enter email"
-      enter_old_password: "Enter old password"
-      enter_new_password: "Enter new password"
-      enter_confirm_password: "Enter confirm password"
+      old_password: "Mật khẩu cũ"
+      password: "Mật khẩu mới"
+      confirm_password: "Nhập lại mật khẩu"
+      edit: "Chỉnh sửa"
+      enter_name: "Điền vào tên"
+      enter_email: "Điền vào email"
+      enter_old_password: "Nhập mật khẩu cũ"
+      enter_new_password: "Nhập mật khẩu mới"
+      enter_confirm_password: "Xác nhận mật khẩu"
     edit:
-      heading: "Edit User"
+      heading: "Chỉnh sửa người dùng"
   shared:
     error: Errors !!!
     text_alert: "Have "
