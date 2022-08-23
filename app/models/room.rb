@@ -25,6 +25,7 @@ class Room < ApplicationRecord
                  start_date: start_date, end_date: end_date)
         end)
   scope :not_ids, ->(ids){where.not(id: ids)}
+  scope :by_types, ->(types){where(types: types) if types.present?}
 
   enum types: {
     Single: 0,
@@ -32,7 +33,4 @@ class Room < ApplicationRecord
     Queen: 2,
     King: 3
   }
-  scope :room_order, ->{order(id: :asc)}
-  scope :recent_rooms, ->{order(created_at: :desc)}
-  scope :by_rating, ->(rating){where(rate_avg: rating)}
 end

@@ -1,12 +1,17 @@
 class Admin::RoomsController < Admin::AdminController
+  before_action :load_room, only: %i(edit update)
+
   def index
-    @pagy, @rooms = pagy Room.recent_rooms, items: Settings.room.room_per_page
+    @pagy, @rooms = pagy Room.recent_rooms.by_types(params[:types]),
+                         items: Settings.room.room_per_page
   end
 
   def new
     @room = Room.new
-    @room.images.build
+    @image = @room.images.build
   end
+
+  def edit; end
 
   def create
     @room = Room.new(room_params)
@@ -14,15 +19,33 @@ class Admin::RoomsController < Admin::AdminController
       redirect_to admin_rooms_path
       flash[:success] = t ".alert"
     else
-      flash.now[:danger] = t ".alert_not_save"
+      flash[:danger] = t ".alert_not_save"
       render :new
+    end
+  end
+
+  def update
+    if @room.update(room_params)
+      flash[:success] = t ".update_success"
+      redirect_to admin_rooms_path
+    else
+      render :edit
+      flash[:danger] = t ".update_fail"
     end
   end
 
   private
   def room_params
-    params.require(:room).permit(:name, :description, :price,
+    params.require(:room).permit(:name, :description, :price, :types,
                                  images_attributes:
                                  [:id, :photo, :_destroy])
+  end
+
+  def load_room
+    @room = Room.find_by id: params[:id]
+    return if @room
+
+    flash[:danger] = t ".load_room_failed"
+    redirect_to admin_rooms_path
   end
 end

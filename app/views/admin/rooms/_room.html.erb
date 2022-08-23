@@ -1,10 +1,11 @@
 <tbody>
   <tr>
-    <td class="w-25"><%= image_tag room.images.first.photo_url, style: Settings.room.image if room.images.present? %></td>
+    <td class="w-25"><%= image_tag room.images.first.photo_url, style: Settings.room.image %></td>
     <td><%= room.name %></td>
     <td><%= room.types %></td>
     <td><%= room.description %></td>
-    <td><%= number_to_currency(room.price) %></td>
+    <td><%= number_to_currency(change_money(room.price)) %></td>
+    <td><%= show_booking(room.id) %><td>
     <td><%= link_to t(".edit"), edit_admin_room_path(room), class: "btn btn-info" %></td>
     <td><%= link_to t(".delete"), edit_admin_room_path(room), class: "btn btn-danger" %></td>
   <tr>

@@ -100,6 +100,12 @@ vi:
         type: Kiểu phòng
         description: Mô tả
         price: Giá phòng
+        photo: Ảnh
+        edit: Sửa
+        delete: Xóa
+        unavailable: Đã đặt
+        action: Hành động
+        search: Tìm kiếm
       new:
         room: Danh sách phòng
         add: Thêm phòng
@@ -113,7 +119,7 @@ vi:
         des: Mô tả
         type: Kiểu phòng
         photo: Ảnh
-        create-btn: Tạo phòng
+        create-btn: Lưu phòng
         select_room: Chọn kiểu phòng
         add_a_photo: Thêm ảnh
       create:
@@ -122,6 +128,19 @@ vi:
       image_fields:
         photo: Ảnh
         remove: Xóa
+      room:
+        edit: Sửa
+        delete: Xóa
+    bills:
+      index:
+        search: Tìm kiếm
+        no: STT
+        price: Tổng tiền
+        user: Khách hàng
+        created_at: Ngày tạo
+        bills: Danh sách hóa đơn
+        status: Trạng thái
+        phone: Số điện thoại
   users:
     update:
       old_password_fail: "Sai mật khẩu cũ"
@@ -143,29 +162,3 @@ vi:
   shared:
     error: Lỗi !!!
     text_alert: "Xảy ra "
-  rooms:
-    room:
-      add_basket_button: "Thêm"
-      start_date: "Ngày bắt đầu"
-      end_date: "Ngày kết thúc"
-    index:
-      start_date: "Ngày bắt đầu"
-      end_date: "Ngày kết thúc"
-      enter_description: "Điền vào mô tả..."
-      search_button: "Tìm kiếm"
-      fill_all_params: "Vui lòng điền đầy đủ ngày bắt đầu và kết thúc!!!"
-      date_danger: "Vui lòng chọn đúng ngày!!!"
-      can_not_find_room: "Không tìm thấy room"
-  bookings:
-    create:
-      room_request_success: "Đặt phòng thành công"
-      room_request_denied: "Đặt phòng thất bại, ngày giờ này đã có người đặt"
-      choose_date: "Hãy chọn phòng của bạn"
-      room_was_booking: "Room đã được đặt bởi một người khác vào ngày giờ này"
-      alert_date_invalid: "Ngày giờ không hợp lệ"
-    destroy:
-      booking_delete_success: "Xóa thành công"
-  baskets:
-    basket:
-      delete: "Xóa"
-      confirm_dialog: "Bạn chắc chắn chưa?"

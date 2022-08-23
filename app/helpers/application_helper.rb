@@ -9,4 +9,16 @@ module ApplicationHelper
     end
     flash_messages.join("\n")
   end
+
+  def change_money money
+    I18n.locale == I18n.default_locale ? money : money / Settings.room.usd
+  end
+
+  def status_color status
+    if status == "pending"
+      "text-primary"
+    else
+      status == "confirm" ? "text-success" : "text-danger"
+    end
+  end
 end

@@ -14,7 +14,7 @@ require('./scripts')
 require ('cocoon')
 require('jquery')
 import "bootstrap"
-import Chart from 'chart.js/auto'
+require('cocoon')
 
 Rails.start()
 Turbolinks.start()
