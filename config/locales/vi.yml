@@ -141,6 +141,7 @@ vi:
         bills: Danh sách hóa đơn
         status: Trạng thái
         phone: Số điện thoại
+        key_search: Tên hoặc số điện thoại
   users:
     update:
       old_password_fail: "Sai mật khẩu cũ"

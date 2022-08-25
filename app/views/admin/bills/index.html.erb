@@ -1,0 +1,36 @@
+<main>
+  <div class="container-fluid px-4">
+    <h1 class="mt-4"><%= t ".bills" %></h1>
+    <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item"><%= link_to t(".dashboard"), admin_dashboard_index_path %></li>
+      <li class="breadcrumb-item active"><%= link_to t(".bills"), admin_bills_path %></li>
+    </ol>
+    <div class="card mb-4">
+      <div class="card-header">
+        <%= form_tag(admin_bills_path, method: :get) do %>
+          <i class="fas fa-table me-1"></i>
+          <%= t ".bills" %>
+          <%= submit_tag t(".search"), name: nil, class: "btn btn-success btn-sm float-end" %>
+          <%= select_tag :status, options_for_select(bill_status_options, params[:status]), class: "select" %>
+          <%= text_field_tag :key, params[:key], :placeholder => t(".key_search"), class: "text-field" %>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <table id="datatablesSimple" class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"><%= t ".no" %></th>
+              <th scope="col"><%= t ".price" %></th>
+              <th scope="col"><%= t ".user" %></th>
+              <th scope="col"><%= t ".phone" %></th>
+              <th scope="col"><%= t ".status" %></th>
+              <th scope="col"><%= t ".created_at" %></th>
+            </tr>
+          </thead>
+          <%= render @bills %>
+        </table>
+        <%== pagy_bootstrap_nav(@pagy) %>
+      </div>
+    </div>
+  </div>
+</main>
