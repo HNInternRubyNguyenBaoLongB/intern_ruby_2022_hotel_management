@@ -1,6 +1,9 @@
 class Bill < ApplicationRecord
   CREATABLE_ATTR = %i(total_price user_id discount_id).freeze
 
+  has_many :bookings, dependent: :destroy
+  belongs_to :user
+
   enum status: {
     pending: 0,
     checking: 1,
@@ -21,4 +24,7 @@ class Bill < ApplicationRecord
                            .where("users.name LIKE ?", "%#{key}%")
                            .or(where("users.phone LIKE ?", "%#{key}%"))
                          end)
+  scope :by_current_user, ->(user_id){where user_id: user_id}
+  scope :find_bill_was_payment, ->{where.not(status: :pending)}
+  scope :find_bill_with_booking, ->(bill_id){where id: bill_id}
 end

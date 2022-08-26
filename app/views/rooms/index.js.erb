@@ -1,0 +1,4 @@
+$('#render_list_room').html('<%= j render @rooms %>');
+$('#render_list_room_pagy').html('<%== pagy_bootstrap_nav @pagy %>');
+Pagy.init(document.getElementById('render_list_room'));
+Pagy.init(document.getElementById('render_list_room_pagy'));

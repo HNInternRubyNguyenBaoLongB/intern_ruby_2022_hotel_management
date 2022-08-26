@@ -1,24 +1,26 @@
-<link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.5.3/dist/css/swiffy-slider.min.css" rel="stylesheet">
 <%= render "layouts/header" %>
-<div class="swiffy-slider slider-item-helper slider-nav-caret">
-  <ul class="slider-container">
-    <% @room.images.each do |image| %>
-      <li><%= image_tag image.photo_url, class: "img-fluid" %></li>
+<div id="carouselExampleControls"  class="carousel slide" >
+  <div class="carousel-inner">
+  <% @room.images.each_with_index do |image,index| %>
+    <% if index == 0 %>
+      <div class="carousel-item active">
+        <%= image_tag image.photo_url, class: "img-fluid" %>
+      </div>
+    <% else %>
+      <div class="carousel-item">
+        <%= image_tag image.photo_url, class: "img-fluid" %>
+      </div>
     <% end %>
-  </ul>
-
-  <button type="button" class="slider-nav"></button>
-  <button type="button" class="slider-nav slider-nav-next"></button>
-
-  <div class="slider-indicators">
-    <% @room.images.each_with_index do |image, index| %>
-      <% if index == 0 %>
-        <button class="active"></button>
-      <% else %>
-        <button></button>
-      <% end %>
-    <% end %>
+  <% end %>
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"><%= t ".previous" %></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden"><%= t ".next" %></span>
+  </button>
 </div>
 <section class="about-section text-center" id="about">
   <div class="container px-4 px-lg-5">
