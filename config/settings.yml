@@ -27,8 +27,12 @@ day:
   day_from_now: 1
 basket:
   max_basket: 3
-history:
-  history_per_page: 5
+bills:
+  bill_per_page: 10
+bookings:
+  booking_per_page: 5
+day:
+  day_from_now: 1
 content:
   max_content: 140
 stars_number_rate: 5

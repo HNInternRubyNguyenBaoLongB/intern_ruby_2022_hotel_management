@@ -1,0 +1,52 @@
+<%= form_for([:admin, @bill], html: {multipart: true}) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div><%= hidden_field :id, f.object.id %></div>
+  <div><%= hidden_field :user_id, f.object.user_id %></div>
+
+  <div class="field">
+    <%= f.label :user, t(".user_name") %>
+    <%= f.text_field :user_name, class: "form-control", value: f.object.user_name, readonly: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone, t(".phone") %>
+    <%= f.text_field :user_phone, class: "form-control", value: f.object.user_phone, readonly: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, t(".email") %>
+    <%= f.text_field :user_email, class: "form-control", value: f.object.user_email, readonly: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price, t(".price") %>
+    <%= f.text_field :total_price, class: "form-control", value: number_to_currency(f.object.total_price), readonly: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :status, t(".status") %><br>
+    <%= f.select(:status, bill_status_edit_options(f.object), {}, { :class => 'form-select' }) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_at, t(".created_at") %>
+    <%= f.text_field :created_at, class: "form-control", value: f.object.created_at.strftime('%FT%T'), readonly: true %>
+  </div>
+  <br>
+  <div class="card" style="width: 28rem;">
+    <div class="card-header">
+      <%= t ".booking" %>
+    </div>
+    <ul class="list-group list-group-flush">
+      <% f.object.bookings.each do |b| %>
+        <li class="list-group-item">
+          <p class="text-primary"><%= b.room_name %></p>
+          <%= b.start_date.strftime('%FT%T')%> / <%= b.end_date.strftime('%FT%T')%>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="actions">
+    <%= f.submit t(".create-btn"), class: "btn btn-primary" %>
+  </div>
+<% end %>

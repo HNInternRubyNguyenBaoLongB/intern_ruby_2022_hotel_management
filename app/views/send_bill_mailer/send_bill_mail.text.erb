@@ -1,0 +1,6 @@
+<%= t ".hi" %> <%= @bill.user_name %>
+<%= t ".confirm" %>
+<%= t ".bill_id" %> <%= @bill.id %>
+<%= t ".list_room" %>
+<%= render partial: "booking", collection: @bill.bookings, as: :booking %>
+<%= t ".thanks" %>

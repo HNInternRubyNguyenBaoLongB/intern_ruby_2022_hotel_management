@@ -12,8 +12,15 @@ class Booking < ApplicationRecord
     abort: 3
   }
 
+  belongs_to :user
+  belongs_to :room
+  belongs_to :bill
+
   delegate :name, :images, :rate_avg, :price, to: :room, prefix: :room
 
+  scope :by_bills, ->(bill_id){where(bill_id: bill_id) if bill_id.present?}
+
+  scope :recent_bookings, ->{order(created_at: :asc)}
   scope :booking_order, ->{order(id: :asc)}
   scope :find_booking, ->(user_id){where user_id: user_id}
   scope :check_exist_booking,

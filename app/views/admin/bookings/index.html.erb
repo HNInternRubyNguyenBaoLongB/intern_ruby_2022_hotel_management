@@ -30,6 +30,7 @@
           </thead>
           <%= render @bookings %>
         </table>
+        <p><%= t ".price" %>: <%= number_to_currency(change_money(@total)) %> </p>
         <%== pagy_bootstrap_nav(@pagy) %>
       </div>
     </div>

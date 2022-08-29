@@ -12,6 +12,7 @@ module InternRuby2022HotelManagement
     config.load_defaults 6.1
     config.i18n.default_locale = :vi
     config.i18n.available_locales = [:en, :vi]
+    config.active_job.queue_adapter = :sidekiq
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

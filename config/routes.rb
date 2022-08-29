@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   get 'reviews/new'
   get 'reviews/create'
@@ -23,4 +24,5 @@ Rails.application.routes.draw do
     resources :baskets
     resources :reviews, only: %i(new create)
   end
+  mount Sidekiq::Web, at: '/sidekiq'
 end
