@@ -167,6 +167,11 @@ vi:
         room: Phòng
         status: Trạng thái
         bookings: Danh sách phòng đặt
+      booking:
+        create-btn: Lưu
+        cancel: Xóa phòng đã đặt
+        reason: Lý do
+        close: Đóng
   users:
     update:
       old_password_fail: "Sai mật khẩu cũ"
