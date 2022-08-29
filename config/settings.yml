@@ -21,13 +21,15 @@ room:
   rating_max: 5
   image: "width:80%"
   usd: 23000
-bookings:
+booking:
   booking_per_page: 5
 day:
   day_from_now: 1
 basket:
   max_basket: 3
-bills:
-  bill_per_page: 5
 history:
   history_per_page: 5
+content:
+  max_content: 140
+stars_number_rate: 5
+rate: [1,2,3,4,5]

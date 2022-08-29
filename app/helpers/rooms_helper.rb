@@ -13,4 +13,14 @@ module RoomsHelper
     end
     temp
   end
+
+  def build_review
+    @review = current_user.reviews.build
+  end
+
+  def check_booked room_id
+    Booking.confirm.check_user_booking_confirm(
+      current_user.id, room_id
+    ).blank?
+  end
 end

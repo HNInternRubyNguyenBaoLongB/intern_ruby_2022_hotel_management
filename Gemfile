@@ -23,6 +23,7 @@ gem "puma", "~> 5.0"
 gem "rails", "~> 6.1.5.1"
 gem "rails-i18n"
 gem "sass-rails", ">= 6"
+gem "tinymce-rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
 

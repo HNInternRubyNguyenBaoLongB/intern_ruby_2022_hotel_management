@@ -1,0 +1,23 @@
+<%= form_for(build_review, html: {multipart: true}) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label t(".rating") %>
+
+  <span class="rating">
+    <% for i in Settings.rate %>
+      <i class="fa fa-star" data-star="<%= i %>"></i>
+    <% end %>
+    <%= f.hidden_field :rating, value: 0 %>
+  </span>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <div class="form-group col-lg-8 margin_tinymce">
+    <%= f.text_area :content, :rows => 40, :cols => 50, class: "form-control change_witdh_heigh tinymce" %>
+  </div>
+  <%= tinymce %>
+  <div class="form-group" >
+    <%= f.fields_for :photos do |photo| %>
+      <%= render "photo_fields", f: photo %>
+    <% end %>
+    <%= link_to_add_association (t ".add_a_photo"), f, :photos, class: "margin_left_button" %>
+  </div>
+  <%= f.submit t(".submit"), class: "btn btn-primary btn_custom margin_left_button" %>
+<% end %>

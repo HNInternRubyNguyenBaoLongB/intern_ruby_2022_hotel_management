@@ -7,7 +7,7 @@ class PaymentController < ApplicationController
       calculate_price
       fill_date_bill
       flash[:success] = t ".success_payment"
-      redirect_to baskets_path
+      redirect_to history_path
     end
   rescue StandardError => e
     flash[danger] = e
@@ -36,8 +36,7 @@ class PaymentController < ApplicationController
       @room_ids = Booking.checking
                          .check_exist_booking(booking.start_date,
                                               booking.end_date).pluck("room_id")
-      next if Booking.find_room_with_id(booking.room_id)
-                     .check_exist_booking_with_room_ids(@room_ids).blank?
+      next if Booking.find_room_with_id(@room_ids).blank?
 
       booking.destroy
       flash[:error] = t(".error_payment")

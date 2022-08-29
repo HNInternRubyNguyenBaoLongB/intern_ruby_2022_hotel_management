@@ -1,9 +1,9 @@
 <tr>
-  <td><%= booking.room_name %>
-  <td><%= booking.total_price %>
+  <td><%= link_to booking.room_name, room_url(booking.room) %>
+  <td><%= number_to_currency(change_money(booking.total_price)) %>
   <td><%= booking.start_date.to_date %> <%= booking.end_date.to_date %>
   <td>
-    <span class='<%= check_status(booking.status) %>'><%= booking.status %> </span>
+    <span class='<%= check_status_booking(booking.status) %>'><%= booking.status %> </span>
   </td>
   <td>
     <%= link_to booking, method: :delete, data: { confirm: t(".confirm_dialog") } do %>

@@ -6,10 +6,10 @@
       <h3><%= room.name %></h3>
       <p><%= room.description %></p>
       <div class="price">
-        <%= change_money(room.price) %>
+        <%= number_to_currency(change_money(room.price)) %>
       </div>
       <p class="star">
-        <span> <%= sanitize render_star(room.rate_avg), attributes: %w(class data-icon) %> </span>
+        <span> <%= sanitize render_star(room.rate_avg), attributes: %w(class data-icon) %> (<%= room.reviews.count %>) </span>
       </p>
     </figcaption><a href="<%= room_url(room) %>"></a>
   </figure>

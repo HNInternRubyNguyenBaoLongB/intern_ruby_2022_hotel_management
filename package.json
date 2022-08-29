@@ -16,6 +16,7 @@
     "jquery-ujs": "^1.2.3",
     "package": "^1.0.1",
     "swiffy-slider": "^1.5.3",
+    "tinymce": "^6.1.2",
     "toastr": "^2.1.4",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",

@@ -1,10 +1,15 @@
 class Booking < ApplicationRecord
   CREATABLE_ATTRS = %i(room_id bill_id total_price start_date end_date).freeze
 
+  belongs_to :user
+  belongs_to :room
+  belongs_to :bill
+
   enum status: {
     pending: 0,
-    confirm: 1,
-    abort: 2
+    checking: 1,
+    confirm: 2,
+    abort: 3
   }
 
   delegate :name, :images, :rate_avg, :price, to: :room, prefix: :room
@@ -20,11 +25,16 @@ class Booking < ApplicationRecord
         end)
 
   scope :find_room_with_id, ->(room_id){where room_id: room_id}
+  scope :find_booking_with_bill_id, ->(bill_id){where bill_id: bill_id}
 
   def calculate_total_price booking, room
     (booking.end_date.to_date -
       booking.start_date.to_date).to_i * room.price
   end
+  scope :check_user_booking_confirm,
+        (lambda do |user_id, room_id|
+          where(user_id: user_id, room_id: room_id)
+        end)
 
   def booking_ids start_date, end_date, user_id
     @room_ids_checking = Booking.checking.check_exist_booking(
